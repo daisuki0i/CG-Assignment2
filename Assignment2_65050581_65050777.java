@@ -1,4 +1,6 @@
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.image.*;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -8,6 +10,13 @@ import javax.swing.*;
 public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
     public static void main(String[] args) {
         Assignment2_65050581_65050777 m = new Assignment2_65050581_65050777();
+        m.addMouseListener(new MouseAdapter() {
+            public void mousePressed(MouseEvent e) {
+                int x = e.getX();
+                int y = e.getY();
+                System.out.println("x: " + x + " y: " + y);
+            }
+        });
 
         JFrame frame = new JFrame("Assignment2_65050581_65050777");
         frame.add(m);
@@ -151,5 +160,22 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         }
 
         return m;
+    }
+
+    private void drawArc(Graphics g, Point p1, Point p2, Point p3, Point p4, int thickness, Color color) {
+        g.setColor(color);
+        int n = 1000;
+        for (int i = 0; i <= n; i++) {
+            double t = (double) i / n;
+            int x = (int)(Math.pow(1 - t, 3) * p1.x + 3 * t * Math.pow(1 - t, 2) * p2.x +
+                3 * Math.pow(t, 2) * (1 - t) * p3.x + Math.pow(t, 3) * p4.x);
+            int y = (int)(Math.pow(1 - t, 3) * p1.y + 3 * t * Math.pow(1 - t, 2) * p2.y +
+                3 * Math.pow(t, 2) * (1 - t) * p3.y + Math.pow(t, 3) * p4.y);
+            for (int j = -thickness / 2; j <= thickness / 2; j++) {
+                for (int k = -thickness / 2; k <= thickness / 2; k++) {
+                    plot(g, x + j, y + k);
+                }
+            }
+        }
     }
 }
