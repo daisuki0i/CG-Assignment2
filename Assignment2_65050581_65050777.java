@@ -50,7 +50,8 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
 
         g2d.setColor(Color.BLACK);
         // drawStrawHatStyle1(g2d);
-        drawStrawHatStyle2(g2d);
+        // drawStrawHatStyle2(g2d);
+        drawRogerFaceFront(g2d);
 
         g.drawImage(mainBuffer, 0, 0, null);
     }
