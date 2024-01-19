@@ -374,5 +374,8 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         g.drawLine(334, 412, 335, 453);
         g.drawLine(368, 408, 368, 441);
         g.drawLine(397, 402, 398, 408);
+        drawArc(g, new Point(145, 324), new Point(143, 325), new Point(136, 328), new Point(136, 332), 1, MyColor.BLACK);
+        drawArc(g, new Point(431, 323), new Point(440, 326), new Point(445, 327), new Point(445, 332), 1, MyColor.BLACK);
+        
     }
 }
