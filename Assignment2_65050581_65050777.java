@@ -51,7 +51,8 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         g2d.setColor(Color.BLACK);
         // drawStrawHatStyle1(g2d);
         // drawStrawHatStyle2(g2d);
-        drawStrawHatStyle3(g2d);
+        // drawStrawHatStyle3(g2d);
+        drawStrawHatStyle4(g2d);
 
         g.drawImage(mainBuffer, 0, 0, null);
     }
@@ -320,6 +321,51 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         drawArc(g, new Point(405,399), new Point(415,397), new Point(439,391), new Point(456,382), 1, MyColor.BLACK);
         drawArc(g, new Point(430,403), new Point(445,399), new Point(476,387), new Point(487,379), 1, MyColor.BLACK);
     }
+
+    private void drawStrawHatStyle4 (Graphics g){
+        drawArc(g, new Point(164,349), new Point(81,208), new Point(386,27), new Point(452,273), 1, MyColor.BLACK);
+        drawArc(g, new Point(164,349), new Point(186,334), new Point(251,291), new Point(452,273), 1, MyColor.BLACK);
+        drawArc(g, new Point(164,349), new Point(161,351), new Point(155,358), new Point(156,362), 1, MyColor.BLACK);
+        drawArc(g, new Point(156,362), new Point(156,364), new Point(157,368), new Point(164,367), 1, MyColor.BLACK);
+        drawArc(g, new Point(164,367), new Point(158,371), new Point(152,379), new Point(166,379), 1, MyColor.BLACK);
+        drawArc(g, new Point(166,379), new Point(242,355), new Point(405,311), new Point(458,324), 1, MyColor.BLACK);
+        drawArc(g, new Point(458,324), new Point(460,316), new Point(463,297), new Point(450,286), 1, MyColor.BLACK);
+        drawArc(g, new Point(450,286), new Point(454,281), new Point(461,272), new Point(452,273), 1, MyColor.BLACK);
+        g.drawLine(166,379, 131,396);
+        g.drawLine(131,396, 36,427);
+        drawArc(g, new Point(36,427), new Point(27,428), new Point(10,432), new Point(10,437), 1, MyColor.BLACK);
+        drawArc(g, new Point(10,437), new Point(8,441), new Point(9,449), new Point(19,449), 1, MyColor.BLACK);
+        g.drawLine(19,449, 26,445);
+        g.drawLine(26,445, 36,445);
+        g.drawLine(36,445, 50,444);
+        g.drawLine(50,444, 78,435);
+        drawArc(g, new Point(78,435), new Point(121,432), new Point(177,412), new Point(229,412), 1, MyColor.BLACK);
+        drawArc(g, new Point(229,412), new Point(322,385), new Point(527,342), new Point(591,339), 1, MyColor.BLACK);
+        drawArc(g, new Point(591,339), new Point(591,333), new Point(582,321), new Point(550,321), 1, MyColor.BLACK);
+        g.drawLine(550,321, 458,324);
+        drawArc(g, new Point(36,445), new Point(48,451), new Point(80,451), new Point(100,442), 1, MyColor.BLACK);
+        drawArc(g, new Point(100,442), new Point(111,444), new Point(134,447), new Point(139,445), 1, MyColor.BLACK);
+        drawArc(g, new Point(139,445), new Point(150,442), new Point(175,437), new Point(179,435), 1, MyColor.BLACK);
+        drawArc(g, new Point(179,435), new Point(180,430), new Point(182,420), new Point(181,416), 1, MyColor.BLACK);
+        drawArc(g, new Point(170,281), new Point(170,286), new Point(170,299), new Point(172,305), 1, MyColor.BLACK);
+        drawArc(g, new Point(164,295), new Point(163,300), new Point(164,311), new Point(166,315), 1, MyColor.BLACK);
+        g.drawLine(161,319, 167,346);
+        drawArc(g, new Point(168,326), new Point(168,329), new Point(169,335), new Point(171,337), 1, MyColor.BLACK);
+        drawArc(g, new Point(178,317), new Point(178,321), new Point(179,329), new Point(182,334), 1, MyColor.BLACK);
+        drawArc(g, new Point(188,317), new Point(187,319), new Point(187,325), new Point(191,329), 1, MyColor.BLACK);
+        g.drawLine(206,346, 223,338);
+        drawArc(g, new Point(230,334), new Point(259,322), new Point(327,299), new Point(361,299), 1, MyColor.BLACK);
+        drawArc(g, new Point(377,303), new Point(388,300), new Point(413,295), new Point(431,295), 1, MyColor.BLACK);
+        drawArc(g, new Point(178,366), new Point(189,361), new Point(217,349), new Point(245,346), 1, MyColor.BLACK);
+        drawArc(g, new Point(244,342), new Point(274,330), new Point(339,306), new Point(361,309), 1, MyColor.BLACK);
+        drawArc(g, new Point(213,373), new Point(228,366), new Point(266,353), new Point(288,351), 1, MyColor.BLACK);
+        drawArc(g, new Point(227,375), new Point(251,368), new Point(301,354), new Point(310,354), 1, MyColor.BLACK);
+        drawArc(g, new Point(210,387), new Point(226,381), new Point(267,376), new Point(278,372), 1, MyColor.BLACK);
+        drawArc(g, new Point(156,407), new Point(166,405), new Point(190,396), new Point(200,395), 1, MyColor.BLACK);
+        g.drawLine(199,401, 273,381);
+        drawArc(g, new Point(355,344), new Point(362,342), new Point(383,337), new Point(407,337), 1, MyColor.BLACK);
+        drawArc(g, new Point(333,352), new Point(346,349), new Point(377,343), new Point(391,344), 1, MyColor.BLACK);
+    }   
 
     private void drawRogerFaceFront(Graphics g) {
         // Face
