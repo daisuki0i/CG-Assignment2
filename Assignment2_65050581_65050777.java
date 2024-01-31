@@ -405,6 +405,35 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         
         buffer = floodFill(buffer, new Point(307, 226), Color.WHITE, MyColor.OIL);
 
+        buffer = toTransparent(buffer);
+
         return buffer;
     }
+
+    private BufferedImage toTransparent(BufferedImage image) {
+        int width = image.getWidth();
+        int height = image.getHeight();
+        BufferedImage newImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
+                int pixelColor = image.getRGB(x, y);
+                int alpha = (pixelColor >> 24) & 0xff;
+                int red = (pixelColor >> 16) & 0xff;
+                int green = (pixelColor >> 8) & 0xff;
+                int blue = pixelColor & 0xff;
+
+                // If the pixel is white, set its alpha to 0 (transparent)
+                if (red == 255 && green == 255 && blue == 255) {
+                    alpha = 0;
+                }
+
+                int newPixelColor = (alpha << 24) | (red << 16) | (green << 8) | blue;
+                newImage.setRGB(x, y, newPixelColor);
+            }
+        }
+
+        return newImage;
+    }
+    
 }
