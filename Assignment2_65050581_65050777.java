@@ -489,7 +489,7 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
     private BufferedImage drawRogerFaceFront() {
         BufferedImage buffer = new BufferedImage(601, 601, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g = buffer.createGraphics();
-        g.setColor(Color.WHITE);
+        g.setColor(MyColor.PLACEHOLDER);
         g.fillRect(0, 0, 601, 601);
 
         // Face
@@ -618,23 +618,23 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         g.drawLine(527, 486, 527, 510);
         g.drawLine(527, 510, 397, 511);
         
-        buffer = floodFill(buffer, new Point(307, 226), Color.WHITE, MyColor.OIL);
+        buffer = floodFill(buffer, new Point(307, 226), MyColor.PLACEHOLDER, MyColor.OIL);
 
-        buffer = floodFill(buffer, new Point(246, 328), Color.WHITE, MyColor.TACAO);
+        buffer = floodFill(buffer, new Point(246, 328), MyColor.PLACEHOLDER, MyColor.TACAO);
 
-        buffer = floodFill(buffer, new Point(487, 249), Color.WHITE, MyColor.EERIE_BLACK);
-        buffer = floodFill(buffer, new Point(96, 253), Color.WHITE, MyColor.EERIE_BLACK);
-        buffer = floodFill(buffer, new Point(113, 404), Color.WHITE, MyColor.EERIE_BLACK);
+        buffer = floodFill(buffer, new Point(487, 249), MyColor.PLACEHOLDER, MyColor.EERIE_BLACK);
+        buffer = floodFill(buffer, new Point(96, 253), MyColor.PLACEHOLDER, MyColor.EERIE_BLACK);
+        buffer = floodFill(buffer, new Point(113, 404), MyColor.PLACEHOLDER, MyColor.EERIE_BLACK);
 
-        buffer = floodFill(buffer, new Point(76, 324), Color.WHITE, MyColor.TACAO);
-        buffer = floodFill(buffer, new Point(502, 325), Color.WHITE, MyColor.TACAO);
+        buffer = floodFill(buffer, new Point(76, 324), MyColor.PLACEHOLDER, MyColor.TACAO);
+        buffer = floodFill(buffer, new Point(502, 325), MyColor.PLACEHOLDER, MyColor.TACAO);
 
-        buffer = floodFill(buffer, new Point(185, 491), Color.WHITE, MyColor.DARK_TACAO);
+        buffer = floodFill(buffer, new Point(185, 491), MyColor.PLACEHOLDER, MyColor.DARK_TACAO);
 
-        buffer = floodFill(buffer, new Point(128, 483), Color.WHITE, MyColor.EERIE_BLACK);
-        buffer = floodFill(buffer, new Point(428, 489), Color.WHITE, MyColor.EERIE_BLACK);
-        buffer = floodFill(buffer, new Point(66, 481), Color.WHITE, MyColor.EERIE);
-        buffer = floodFill(buffer, new Point(490, 476), Color.WHITE, MyColor.EERIE);
+        buffer = floodFill(buffer, new Point(128, 483), MyColor.PLACEHOLDER, MyColor.EERIE_BLACK);
+        buffer = floodFill(buffer, new Point(428, 489), MyColor.PLACEHOLDER, MyColor.EERIE_BLACK);
+        buffer = floodFill(buffer, new Point(66, 481), MyColor.PLACEHOLDER, MyColor.EERIE);
+        buffer = floodFill(buffer, new Point(490, 476), MyColor.PLACEHOLDER, MyColor.EERIE);
 
         buffer = toTransparent(buffer);
 
@@ -655,7 +655,7 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
                 int blue = pixelColor & 0xff;
 
                 // If the pixel is white, set its alpha to 0 (transparent)
-                if (red == 255 && green == 255 && blue == 255) {
+                if (red == 245 && green == 245 && blue == 245) {
                     alpha = 0;
                 }
 

@@ -6,7 +6,7 @@ public class MyColor extends Color {
 		super(r, g, b);
 	}
 
-	public static final Color PLACEHOLDER = Color.decode("##f5f5f5");
+	public static final Color PLACEHOLDER = Color.decode("#f5f5f5");
 	public static final Color OIL = Color.decode("#291C16");
 	public static final Color TACAO = Color.decode("#ECBA88");
 	public static final Color EERIE_BLACK = Color.decode("#1B191A");
