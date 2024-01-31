@@ -404,6 +404,9 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         drawArc(g, new Point(431, 323), new Point(440, 326), new Point(445, 327), new Point(445, 332), 1, MyColor.BLACK);
         
         buffer = floodFill(buffer, new Point(307, 226), Color.WHITE, MyColor.OIL);
+        buffer = floodFill(buffer, new Point(246, 328), Color.WHITE, MyColor.TACAO);
+        // buffer = floodFill(buffer, new Point(487, 249), Color.WHITE, MyColor.EERIE_BLACK);
+        // buffer = floodFill(buffer, new Point(96, 253), Color.WHITE, MyColor.EERIE_BLACK);
 
         buffer = toTransparent(buffer);
 
