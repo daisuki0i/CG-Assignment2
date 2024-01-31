@@ -51,7 +51,7 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         g2d.setColor(Color.BLACK);
         // drawStrawHatStyle1(g2d);
         // drawStrawHatStyle2(g2d);
-        drawRogerFaceFront(g2d);
+        mainBuffer = drawRogerFaceFront();
 
         g.drawImage(mainBuffer, 0, 0, null);
     }
@@ -281,7 +281,12 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         drawArc(g, new Point(472,471), new Point(485,470), new Point(514,467), new Point(526,458), 1, MyColor.BLACK);
     }
 
-    private void drawRogerFaceFront(Graphics g) {
+    private BufferedImage drawRogerFaceFront() {
+        BufferedImage buffer = new BufferedImage(601, 601, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g = buffer.createGraphics();
+        g.setColor(Color.WHITE);
+        g.fillRect(0, 0, 601, 601);
+
         // Face
         drawArc(g, new Point(113, 305), new Point(76, 72), new Point(501, 87), new Point(466, 289), 1, MyColor.BLACK);
         drawArc(g, new Point(113, 305), new Point(121, 337), new Point(139, 407), new Point(150, 427), 1, MyColor.BLACK);
@@ -311,6 +316,17 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         drawArc(g, new Point(508, 271), new Point(517, 285), new Point(514, 314), new Point(511, 328), 1, MyColor.BLACK);
         drawArc(g, new Point(511, 328), new Point(508, 343), new Point(487, 383), new Point(446, 407), 1, MyColor.BLACK);
         drawArc(g, new Point(446, 407), new Point(441, 410), new Point(438, 412), new Point(437, 407), 1, MyColor.BLACK);
+        g.drawLine(509, 297, 504, 285);
+        drawArc(g, new Point(504, 285), new Point(503, 283), new Point(502, 281), new Point(498, 284), 1, MyColor.BLACK);
+        drawArc(g, new Point(498, 284), new Point(494, 287), new Point(489, 291), new Point(483, 297), 1, MyColor.BLACK);
+        drawArc(g, new Point(483, 297), new Point(475, 305), new Point(468, 317), new Point(468, 329), 1, MyColor.BLACK);
+        drawArc(g, new Point(468, 329), new Point(468, 341), new Point(475, 354), new Point(467, 362), 1, MyColor.BLACK);
+        g.drawLine(467, 362, 450, 379);
+        drawArc(g, new Point(506, 290), new Point(507, 296), new Point(509, 307), new Point(502, 311), 1, MyColor.BLACK);
+        drawArc(g, new Point(483, 297), new Point(484, 305), new Point(490, 312), new Point(495, 312), 1, MyColor.BLACK);
+        drawArc(g, new Point(468, 330), new Point(495, 304), new Point(495, 321), new Point(496, 334), 1, MyColor.BLACK);
+        drawArc(g, new Point(496, 336), new Point(495, 350), new Point(479, 371), new Point(468, 378), 1, MyColor.BLACK);
+        g.drawLine(452, 388, 441, 397);
 
         // Neck
         g.drawLine(167, 446, 175, 510);
@@ -387,5 +403,8 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         drawArc(g, new Point(145, 324), new Point(143, 325), new Point(136, 328), new Point(136, 332), 1, MyColor.BLACK);
         drawArc(g, new Point(431, 323), new Point(440, 326), new Point(445, 327), new Point(445, 332), 1, MyColor.BLACK);
         
+        buffer = floodFill(buffer, new Point(307, 226), Color.WHITE, MyColor.OIL);
+
+        return buffer;
     }
 }
