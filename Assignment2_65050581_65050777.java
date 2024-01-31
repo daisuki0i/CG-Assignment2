@@ -49,9 +49,12 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         Graphics2D g2d = mainBuffer.createGraphics();
 
         g2d.setColor(Color.BLACK);
-        // drawStrawHatStyle1(g2d);
-        // drawStrawHatStyle2(g2d);
-        mainBuffer = drawRogerFaceFront();
+        // mainBuffer = drawStrawHatStyle1();
+        // mainBuffer = drawStrawHatStyle2();
+        // mainBuffer = drawStrawHatStyle3();
+        // mainBuffer = drawStrawHatStyle4();
+        mainBuffer = drawStrawHatStyle5();
+        // mainBuffer = drawRogerFaceFront();
 
         g.drawImage(mainBuffer, 0, 0, null);
     }
@@ -181,7 +184,12 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         }
     }
 
-    private void drawStrawHatStyle1 (Graphics g){
+    private BufferedImage drawStrawHatStyle1 (){
+        BufferedImage buffer = new BufferedImage(601, 601, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g = buffer.createGraphics();
+        g.setColor(Color.WHITE);
+        g.fillRect(0, 0, 601, 601);
+
         drawArc(g, new Point(187,302), new Point(174,126), new Point(477,122), new Point(451,304), 1, MyColor.BLACK);
         drawArc(g, new Point(181,303), new Point(254,299), new Point(410,301), new Point(455,305), 1, MyColor.BLACK);
         drawArc(g, new Point(181,303), new Point(179,306), new Point(181,311), new Point(185,315), 1, MyColor.BLACK);
@@ -232,9 +240,22 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         drawArc(g, new Point(420,367), new Point(435,364), new Point(467,360), new Point(466,358), 1, MyColor.BLACK);
         drawArc(g, new Point(431,371), new Point(443,371), new Point(470,371), new Point(476,369), 1, MyColor.BLACK);
         drawArc(g, new Point(446,378), new Point(463,379), new Point(500,379), new Point(508,377), 1, MyColor.BLACK);
+
+        buffer = floodFill(buffer, new Point(327,243), Color.WHITE, MyColor.STRAW_HAT);
+        buffer = floodFill(buffer, new Point(87,371), Color.WHITE, MyColor.STRAW_HAT);
+        buffer = floodFill(buffer, new Point(307,330), Color.WHITE, MyColor.HEADDAND);
+
+        buffer = toTransparent(buffer);
+
+        return buffer;
     }
 
-    private void drawStrawHatStyle2 (Graphics g){
+    private BufferedImage drawStrawHatStyle2 (){
+        BufferedImage buffer = new BufferedImage(601, 601, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g = buffer.createGraphics();
+        g.setColor(Color.WHITE);
+        g.fillRect(0, 0, 601, 601);
+
         drawArc(g, new Point(187,361), new Point(165,179), new Point(496,175), new Point(452,389), 1, MyColor.BLACK);
         drawArc(g, new Point(180,358), new Point(235,377), new Point(368,412), new Point(452,389), 1, MyColor.BLACK);
         drawArc(g, new Point(180,358), new Point(177,359), new Point(173,364), new Point(177,372), 1, MyColor.BLACK);
@@ -279,9 +300,24 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         drawArc(g, new Point(472,464), new Point(479,464), new Point(494,463), new Point(502,459), 1, MyColor.BLACK);
         drawArc(g, new Point(472,464), new Point(479,464), new Point(494,463), new Point(502,459), 1, MyColor.BLACK);
         drawArc(g, new Point(472,471), new Point(485,470), new Point(514,467), new Point(526,458), 1, MyColor.BLACK);
+
+        buffer = floodFill(buffer, new Point(324,339), Color.WHITE, MyColor.STRAW_HAT);
+        buffer = floodFill(buffer, new Point(152,423), Color.WHITE, MyColor.STRAW_HAT);
+        buffer = floodFill(buffer, new Point(245,390), Color.WHITE, MyColor.HEADDAND);
+        buffer = floodFill(buffer, new Point(308,420), Color.WHITE, MyColor.HEADDAND_SHADOW);
+        buffer = floodFill(buffer, new Point(201,408), Color.WHITE, MyColor.HEADDAND_SHADOW);
+
+        buffer = toTransparent(buffer);
+
+        return buffer;
     }
 
-    private void drawStrawHatStyle3 (Graphics g){
+    private BufferedImage drawStrawHatStyle3 (){
+        BufferedImage buffer = new BufferedImage(601, 601, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g = buffer.createGraphics();
+        g.setColor(Color.WHITE);
+        g.fillRect(0, 0, 601, 601);
+
         drawArc(g, new Point(185,329), new Point(140,146), new Point(441,84), new Point(426,323), 1, MyColor.BLACK);
         drawArc(g, new Point(185,329), new Point(190,351), new Point(383,351), new Point(426,323), 1, MyColor.BLACK);
         drawArc(g, new Point(185,329), new Point(177,329), new Point(175,343), new Point(177,374), 1, MyColor.BLACK);
@@ -319,9 +355,22 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         drawArc(g, new Point(380,397), new Point(395,393), new Point(430,383), new Point(447,373), 1, MyColor.BLACK);
         drawArc(g, new Point(405,399), new Point(415,397), new Point(439,391), new Point(456,382), 1, MyColor.BLACK);
         drawArc(g, new Point(430,403), new Point(445,399), new Point(476,387), new Point(487,379), 1, MyColor.BLACK);
+
+        buffer = floodFill(buffer, new Point(303,282), Color.WHITE, MyColor.STRAW_HAT);
+        buffer = floodFill(buffer, new Point(304,423), Color.WHITE, MyColor.STRAW_HAT);
+        buffer = floodFill(buffer, new Point(301,380), Color.WHITE, MyColor.HEADDAND);
+
+        buffer = toTransparent(buffer);
+
+        return buffer;
     }
 
-    private void drawStrawHatStyle4 (Graphics g){
+    private BufferedImage drawStrawHatStyle4(){
+        BufferedImage buffer = new BufferedImage(601, 601, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g = buffer.createGraphics();
+        g.setColor(Color.WHITE);
+        g.fillRect(0, 0, 601, 601);
+
         drawArc(g, new Point(164,349), new Point(81,208), new Point(386,27), new Point(452,273), 1, MyColor.BLACK);
         drawArc(g, new Point(164,349), new Point(186,334), new Point(251,291), new Point(452,273), 1, MyColor.BLACK);
         drawArc(g, new Point(164,349), new Point(161,351), new Point(155,358), new Point(156,362), 1, MyColor.BLACK);
@@ -364,9 +413,23 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         g.drawLine(199,401, 273,381);
         drawArc(g, new Point(355,344), new Point(362,342), new Point(383,337), new Point(407,337), 1, MyColor.BLACK);
         drawArc(g, new Point(333,352), new Point(346,349), new Point(377,343), new Point(391,344), 1, MyColor.BLACK);
+
+        buffer = floodFill(buffer, new Point(322,230), Color.WHITE, MyColor.STRAW_HAT);
+        buffer = floodFill(buffer, new Point(319,380), Color.WHITE, MyColor.STRAW_HAT);
+        buffer = floodFill(buffer, new Point(138,435), Color.WHITE, MyColor.STRAW_HAT_SHADOW);
+        buffer = floodFill(buffer, new Point(321,324), Color.WHITE, MyColor.HEADDAND);
+
+        buffer = toTransparent(buffer);
+
+        return buffer;
     }
     
-    private void drawStrawHatStyle5 (Graphics g){
+    private BufferedImage drawStrawHatStyle5 (){
+        BufferedImage buffer = new BufferedImage(601, 601, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g = buffer.createGraphics();
+        g.setColor(Color.WHITE);
+        g.fillRect(0, 0, 601, 601);
+
         drawArc(g, new Point(167,300), new Point(192,326), new Point(353,349), new Point(449,320), 1, MyColor.BLACK); 
         drawArc(g, new Point(167,300), new Point(134,131), new Point(466,62), new Point(449,320), 1, MyColor.BLACK); 
         drawArc(g, new Point(166,294), new Point(162,294), new Point(156,299), new Point(162,311), 1, MyColor.BLACK); 
@@ -413,8 +476,14 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         g.drawLine(361,400,414,394);
         g.drawLine(364,405,433,405);
         g.drawLine(408,411,457,404);
+
+        buffer = floodFill(buffer, new Point(304,263), Color.WHITE, MyColor.STRAW_HAT);
+        buffer = floodFill(buffer, new Point(298,406), Color.WHITE, MyColor.STRAW_HAT);
+        buffer = floodFill(buffer, new Point(311,342), Color.WHITE, MyColor.HEADDAND);
         
-        // drawArc(g, new Point(), new Point(), new Point(), new Point(), 1, MyColor.BLACK);
+        buffer = toTransparent(buffer);
+
+        return buffer;
     }
 
     private BufferedImage drawRogerFaceFront() {
