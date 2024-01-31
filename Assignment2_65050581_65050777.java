@@ -53,8 +53,8 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         // mainBuffer = drawStrawHatStyle2();
         // mainBuffer = drawStrawHatStyle3();
         // mainBuffer = drawStrawHatStyle4();
-        mainBuffer = drawStrawHatStyle5();
-        // mainBuffer = drawRogerFaceFront();
+        // mainBuffer = drawStrawHatStyle5();
+        mainBuffer = drawRogerFaceFront();
 
         g.drawImage(mainBuffer, 0, 0, null);
     }
@@ -493,43 +493,43 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         g.fillRect(0, 0, 601, 601);
 
         // Face
-        drawArc(g, new Point(113, 305), new Point(76, 72), new Point(501, 87), new Point(466, 289), 1, MyColor.BLACK);
-        drawArc(g, new Point(113, 305), new Point(121, 337), new Point(139, 407), new Point(150, 427), 1, MyColor.BLACK);
-        drawArc(g, new Point(150, 427), new Point(169, 450), new Point(212, 497), new Point(236, 498), 1, MyColor.BLACK);
+        drawArc(g, new Point(113, 305), new Point(76, 72), new Point(501, 87), new Point(466, 289), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(113, 305), new Point(121, 337), new Point(139, 407), new Point(150, 427), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(150, 427), new Point(169, 450), new Point(212, 497), new Point(236, 498), 1, MyColor.EERIE_BLACK);
         g.drawLine(236, 498, 333, 498);
-        drawArc(g, new Point(333, 498), new Point(344, 496), new Point(379, 477), new Point(428, 427), 1, MyColor.BLACK);
-        drawArc(g, new Point(428, 427), new Point(442, 400), new Point(463, 329), new Point(466, 289), 1, MyColor.BLACK);
+        drawArc(g, new Point(333, 498), new Point(344, 496), new Point(379, 477), new Point(428, 427), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(428, 427), new Point(442, 400), new Point(463, 329), new Point(466, 289), 1, MyColor.EERIE_BLACK);
 
         // Left Ear
-        drawArc(g, new Point(116, 316), new Point(109, 299), new Point(93, 265), new Point(86, 261), 1, MyColor.BLACK);
-        drawArc(g, new Point(86, 261), new Point(78, 256), new Point(59, 295), new Point(69, 337), 1, MyColor.BLACK);
-        drawArc(g, new Point(69, 337), new Point(79, 360), new Point(104, 382), new Point(133, 407), 1, MyColor.BLACK);
-        drawArc(g, new Point(133, 407), new Point(135, 408), new Point(140, 408), new Point(141, 405), 1, MyColor.BLACK);
-        drawArc(g, new Point(76, 311), new Point(76, 299), new Point(75, 293), new Point(82, 284), 1, MyColor.BLACK);
-        drawArc(g, new Point(82, 284), new Point(84, 281), new Point(86, 280), new Point(88, 284), 1, MyColor.BLACK);
-        drawArc(g, new Point(88, 284), new Point(90, 288), new Point(93, 292), new Point(95, 296), 1, MyColor.BLACK);
-        drawArc(g, new Point(95, 296), new Point(93, 311), new Point(91, 311), new Point(80, 309), 1, MyColor.BLACK);
-        drawArc(g, new Point(95, 296), new Point(102, 307), new Point(109, 317), new Point(108, 328), 1, MyColor.BLACK);
-        drawArc(g, new Point(108, 328), new Point(106, 355), new Point(110, 353), new Point(130, 370), 1, MyColor.BLACK);
-        drawArc(g, new Point(107, 321), new Point(105, 316), new Point(103, 314), new Point(95, 314), 1, MyColor.BLACK);
-        drawArc(g, new Point(95, 314), new Point(87, 314), new Point(87, 318), new Point(85, 330), 1, MyColor.BLACK);
-        drawArc(g, new Point(85, 330), new Point(82, 349), new Point(85, 345), new Point(126, 382), 1, MyColor.BLACK);
+        drawArc(g, new Point(116, 316), new Point(109, 299), new Point(93, 265), new Point(86, 261), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(86, 261), new Point(78, 256), new Point(59, 295), new Point(69, 337), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(69, 337), new Point(79, 360), new Point(104, 382), new Point(133, 407), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(133, 407), new Point(135, 408), new Point(140, 408), new Point(141, 405), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(76, 311), new Point(76, 299), new Point(75, 293), new Point(82, 284), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(82, 284), new Point(84, 281), new Point(86, 280), new Point(88, 284), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(88, 284), new Point(90, 288), new Point(93, 292), new Point(95, 296), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(95, 296), new Point(93, 311), new Point(91, 311), new Point(80, 309), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(95, 296), new Point(102, 307), new Point(109, 317), new Point(108, 328), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(108, 328), new Point(106, 355), new Point(110, 353), new Point(130, 370), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(107, 321), new Point(105, 316), new Point(103, 314), new Point(95, 314), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(95, 314), new Point(87, 314), new Point(87, 318), new Point(85, 330), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(85, 330), new Point(82, 349), new Point(85, 345), new Point(126, 382), 1, MyColor.EERIE_BLACK);
 
         // Right Ear
-        drawArc(g, new Point(461, 323), new Point(470, 300), new Point(493, 257), new Point(508, 271), 1, MyColor.BLACK);
-        drawArc(g, new Point(508, 271), new Point(517, 285), new Point(514, 314), new Point(511, 328), 1, MyColor.BLACK);
-        drawArc(g, new Point(511, 328), new Point(508, 343), new Point(487, 383), new Point(446, 407), 1, MyColor.BLACK);
-        drawArc(g, new Point(446, 407), new Point(441, 410), new Point(438, 412), new Point(437, 407), 1, MyColor.BLACK);
+        drawArc(g, new Point(461, 323), new Point(470, 300), new Point(493, 257), new Point(508, 271), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(508, 271), new Point(517, 285), new Point(514, 314), new Point(511, 328), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(511, 328), new Point(508, 343), new Point(487, 383), new Point(446, 407), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(446, 407), new Point(441, 410), new Point(438, 412), new Point(437, 407), 1, MyColor.EERIE_BLACK);
         g.drawLine(509, 297, 504, 285);
-        drawArc(g, new Point(504, 285), new Point(503, 283), new Point(502, 281), new Point(498, 284), 1, MyColor.BLACK);
-        drawArc(g, new Point(498, 284), new Point(494, 287), new Point(489, 291), new Point(483, 297), 1, MyColor.BLACK);
-        drawArc(g, new Point(483, 297), new Point(475, 305), new Point(468, 317), new Point(468, 329), 1, MyColor.BLACK);
-        drawArc(g, new Point(468, 329), new Point(468, 341), new Point(475, 354), new Point(467, 362), 1, MyColor.BLACK);
+        drawArc(g, new Point(504, 285), new Point(503, 283), new Point(502, 281), new Point(498, 284), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(498, 284), new Point(494, 287), new Point(489, 291), new Point(483, 297), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(483, 297), new Point(475, 305), new Point(468, 317), new Point(468, 329), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(468, 329), new Point(468, 341), new Point(475, 354), new Point(467, 362), 1, MyColor.EERIE_BLACK);
         g.drawLine(467, 362, 450, 379);
-        drawArc(g, new Point(506, 290), new Point(507, 296), new Point(509, 307), new Point(502, 311), 1, MyColor.BLACK);
-        drawArc(g, new Point(483, 297), new Point(484, 305), new Point(490, 312), new Point(495, 312), 1, MyColor.BLACK);
-        drawArc(g, new Point(468, 330), new Point(495, 304), new Point(495, 321), new Point(496, 334), 1, MyColor.BLACK);
-        drawArc(g, new Point(496, 336), new Point(495, 350), new Point(479, 371), new Point(468, 378), 1, MyColor.BLACK);
+        drawArc(g, new Point(506, 290), new Point(507, 296), new Point(509, 307), new Point(502, 311), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(483, 297), new Point(484, 305), new Point(490, 312), new Point(495, 312), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(468, 330), new Point(495, 304), new Point(495, 321), new Point(496, 334), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(496, 336), new Point(495, 350), new Point(479, 371), new Point(468, 378), 1, MyColor.EERIE_BLACK);
         g.drawLine(452, 388, 441, 397);
 
         // Neck
@@ -538,83 +538,83 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         g.drawLine(397, 511, 404, 450);
 
         // Face Shadow
-        drawArc(g, new Point(114, 304), new Point(125, 290), new Point(132, 289), new Point(152, 302), 1, MyColor.BLACK);
-        drawArc(g, new Point(152, 302), new Point(193, 326), new Point(216, 322), new Point(279, 267), 1, MyColor.BLACK);
-        drawArc(g, new Point(279, 267), new Point(284, 263), new Point(294, 263), new Point(300, 267), 1, MyColor.BLACK);
-        drawArc(g, new Point(300, 267), new Point(345, 298), new Point(381, 349), new Point(458, 282), 1, MyColor.BLACK);
-        drawArc(g, new Point(458, 282), new Point(460, 283), new Point(465, 286), new Point(466, 290), 1, MyColor.BLACK);
+        drawArc(g, new Point(114, 304), new Point(125, 290), new Point(132, 289), new Point(152, 302), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(152, 302), new Point(193, 326), new Point(216, 322), new Point(279, 267), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(279, 267), new Point(284, 263), new Point(294, 263), new Point(300, 267), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(300, 267), new Point(345, 298), new Point(381, 349), new Point(458, 282), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(458, 282), new Point(460, 283), new Point(465, 286), new Point(466, 290), 1, MyColor.EERIE_BLACK);
 
         // Hair
         g.drawLine(122, 222, 55, 249);
-        drawArc(g, new Point(55, 249), new Point(55, 293), new Point(34, 334), new Point(19, 343), 1, MyColor.BLACK);
-        drawArc(g, new Point(19, 343), new Point(29, 343), new Point(56, 335), new Point(66, 315), 1, MyColor.BLACK);
-        drawArc(g, new Point(66, 315), new Point(63, 326), new Point(62, 361), new Point(68, 393), 1, MyColor.BLACK);
-        drawArc(g, new Point(68, 393), new Point(73, 382), new Point(76, 364), new Point(81, 362), 1, MyColor.BLACK);
-        drawArc(g, new Point(81, 362), new Point(83, 374), new Point(86, 401), new Point(84, 415), 1, MyColor.BLACK);
-        drawArc(g, new Point(84, 415), new Point(89, 410), new Point(99, 399), new Point(99, 393), 1, MyColor.BLACK);
-        drawArc(g, new Point(99, 393), new Point(99, 399), new Point(99, 434), new Point(114, 460), 1, MyColor.BLACK);
-        drawArc(g, new Point(114, 460), new Point(114, 452), new Point(116, 433), new Point(122, 425), 1, MyColor.BLACK);
-        drawArc(g, new Point(122, 425), new Point(125, 435), new Point(131, 455), new Point(138, 465), 1, MyColor.BLACK);
-        drawArc(g, new Point(138, 465), new Point(140, 459), new Point(145, 447), new Point(145, 442), 1, MyColor.BLACK);
-        drawArc(g, new Point(145, 442), new Point(145, 437), new Point(150, 455), new Point(153, 466), 1, MyColor.BLACK);
+        drawArc(g, new Point(55, 249), new Point(55, 293), new Point(34, 334), new Point(19, 343), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(19, 343), new Point(29, 343), new Point(56, 335), new Point(66, 315), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(66, 315), new Point(63, 326), new Point(62, 361), new Point(68, 393), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(68, 393), new Point(73, 382), new Point(76, 364), new Point(81, 362), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(81, 362), new Point(83, 374), new Point(86, 401), new Point(84, 415), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(84, 415), new Point(89, 410), new Point(99, 399), new Point(99, 393), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(99, 393), new Point(99, 399), new Point(99, 434), new Point(114, 460), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(114, 460), new Point(114, 452), new Point(116, 433), new Point(122, 425), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(122, 425), new Point(125, 435), new Point(131, 455), new Point(138, 465), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(138, 465), new Point(140, 459), new Point(145, 447), new Point(145, 442), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(145, 442), new Point(145, 437), new Point(150, 455), new Point(153, 466), 1, MyColor.EERIE_BLACK);
 
-        drawArc(g, new Point(460, 222), new Point(520, 237), new Point(517, 253), new Point(517, 260), 1, MyColor.BLACK);
-        drawArc(g, new Point(517, 260), new Point(517, 284), new Point(526, 332), new Point(543, 338), 1, MyColor.BLACK);
-        drawArc(g, new Point(543, 338), new Point(535, 336), new Point(518, 330), new Point(514, 327), 1, MyColor.BLACK);
-        drawArc(g, new Point(514, 327), new Point(513, 342), new Point(513, 378), new Point(518, 400), 1, MyColor.BLACK);
-        drawArc(g, new Point(518, 400), new Point(512, 394), new Point(498, 379), new Point(496, 371), 1, MyColor.BLACK);
-        drawArc(g, new Point(496, 371), new Point(494, 361), new Point(497, 415), new Point(512, 429), 1, MyColor.BLACK);
-        drawArc(g, new Point(512, 429), new Point(499, 429), new Point(477, 417), new Point(470, 403), 1, MyColor.BLACK);
-        drawArc(g, new Point(470, 403), new Point(470, 411), new Point(468, 429), new Point(454, 440), 1, MyColor.BLACK);
-        drawArc(g, new Point(454, 440), new Point(454, 445), new Point(455, 457), new Point(463, 470), 1, MyColor.BLACK);
-        drawArc(g, new Point(463, 470), new Point(455, 466), new Point(438, 455), new Point(433, 443), 1, MyColor.BLACK);
-        drawArc(g, new Point(433, 443), new Point(432, 449), new Point(429, 461), new Point(433, 471), 1, MyColor.BLACK);
-        drawArc(g, new Point(433, 471), new Point(430, 468), new Point(423, 458), new Point(421, 448), 1, MyColor.BLACK);
-        drawArc(g, new Point(421, 448), new Point(421, 452), new Point(420, 460), new Point(418, 463), 1, MyColor.BLACK);
+        drawArc(g, new Point(460, 222), new Point(520, 237), new Point(517, 253), new Point(517, 260), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(517, 260), new Point(517, 284), new Point(526, 332), new Point(543, 338), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(543, 338), new Point(535, 336), new Point(518, 330), new Point(514, 327), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(514, 327), new Point(513, 342), new Point(513, 378), new Point(518, 400), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(518, 400), new Point(512, 394), new Point(498, 379), new Point(496, 371), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(496, 371), new Point(494, 361), new Point(497, 415), new Point(512, 429), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(512, 429), new Point(499, 429), new Point(477, 417), new Point(470, 403), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(470, 403), new Point(470, 411), new Point(468, 429), new Point(454, 440), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(454, 440), new Point(454, 445), new Point(455, 457), new Point(463, 470), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(463, 470), new Point(455, 466), new Point(438, 455), new Point(433, 443), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(433, 443), new Point(432, 449), new Point(429, 461), new Point(433, 471), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(433, 471), new Point(430, 468), new Point(423, 458), new Point(421, 448), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(421, 448), new Point(421, 452), new Point(420, 460), new Point(418, 463), 1, MyColor.EERIE_BLACK);
 
         // Nose
         g.drawLine(298, 286, 298, 318);
         g.drawLine(281, 266, 281, 318);
-        drawArc(g, new Point(281, 318), new Point(281, 323), new Point(281, 329), new Point(289, 328), 1, MyColor.BLACK);
+        drawArc(g, new Point(281, 318), new Point(281, 323), new Point(281, 329), new Point(289, 328), 1, MyColor.EERIE_BLACK);
         g.drawLine(282, 315, 289, 310);
         g.drawLine(282, 319, 290, 313);
         g.drawLine(285, 320, 293, 314);
         g.drawLine(292, 319, 295, 317);
-        drawArc(g, new Point(272, 339), new Point(273, 338), new Point(277, 337), new Point(279, 338), 1, MyColor.BLACK);
-        drawArc(g, new Point(300, 340), new Point(302, 338), new Point(306, 337), new Point(308, 337), 1, MyColor.BLACK);
+        drawArc(g, new Point(272, 339), new Point(273, 338), new Point(277, 337), new Point(279, 338), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(300, 340), new Point(302, 338), new Point(306, 337), new Point(308, 337), 1, MyColor.EERIE_BLACK);
 
         // Mouth
-        drawArc(g, new Point(145, 337), new Point(149, 344), new Point(196, 366), new Point(208, 365), 1, MyColor.BLACK);
+        drawArc(g, new Point(145, 337), new Point(149, 344), new Point(196, 366), new Point(208, 365), 1, MyColor.EERIE_BLACK);
         g.drawLine(208, 365, 365, 365);
-        drawArc(g, new Point(365, 365), new Point(374, 366), new Point(424, 346), new Point(435, 335), 1, MyColor.BLACK);
-        drawArc(g, new Point(430, 339), new Point(411, 404), new Point(374, 467), new Point(291, 463), 1, MyColor.BLACK);
-        drawArc(g, new Point(291, 463), new Point(189, 461), new Point(158, 409), new Point(149, 341), 1, MyColor.BLACK);
-        drawArc(g, new Point(168, 397), new Point(207, 409), new Point(369, 413), new Point(404, 397), 1, MyColor.BLACK);
+        drawArc(g, new Point(365, 365), new Point(374, 366), new Point(424, 346), new Point(435, 335), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(430, 339), new Point(411, 404), new Point(374, 467), new Point(291, 463), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(291, 463), new Point(189, 461), new Point(158, 409), new Point(149, 341), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(168, 397), new Point(207, 409), new Point(369, 413), new Point(404, 397), 1, MyColor.EERIE_BLACK);
         g.drawLine(290, 365, 290, 403);
-        drawArc(g, new Point(245, 370), new Point(245, 381), new Point(247, 396), new Point(248, 403), 1, MyColor.BLACK);
-        drawArc(g, new Point(203, 368), new Point(204, 378), new Point(206, 397), new Point(207, 401), 1, MyColor.BLACK);
-        drawArc(g, new Point(165, 358), new Point(167, 370), new Point(171, 391), new Point(174, 394), 1, MyColor.BLACK);
-        drawArc(g, new Point(336, 368), new Point(336, 377), new Point(334, 395), new Point(332, 404), 1, MyColor.BLACK);
-        drawArc(g, new Point(376, 366), new Point(374, 377), new Point(368, 398), new Point(366, 402), 1, MyColor.BLACK);
+        drawArc(g, new Point(245, 370), new Point(245, 381), new Point(247, 396), new Point(248, 403), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(203, 368), new Point(204, 378), new Point(206, 397), new Point(207, 401), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(165, 358), new Point(167, 370), new Point(171, 391), new Point(174, 394), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(336, 368), new Point(336, 377), new Point(334, 395), new Point(332, 404), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(376, 366), new Point(374, 377), new Point(368, 398), new Point(366, 402), 1, MyColor.EERIE_BLACK);
         g.drawLine(412, 356, 398, 395);
         g.drawLine(290, 412, 290, 459);
-        drawArc(g, new Point(248, 412), new Point(245, 425), new Point(243, 449), new Point(243, 457), 1, MyColor.BLACK);
-        drawArc(g, new Point(209, 407), new Point(207, 407), new Point(205, 428), new Point(205, 438), 1, MyColor.BLACK);
+        drawArc(g, new Point(248, 412), new Point(245, 425), new Point(243, 449), new Point(243, 457), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(209, 407), new Point(207, 407), new Point(205, 428), new Point(205, 438), 1, MyColor.EERIE_BLACK);
         g.drawLine(175, 402, 174, 413);
         g.drawLine(334, 412, 335, 453);
         g.drawLine(368, 408, 368, 441);
         g.drawLine(397, 402, 398, 408);
-        drawArc(g, new Point(145, 324), new Point(143, 325), new Point(136, 328), new Point(136, 332), 1, MyColor.BLACK);
-        drawArc(g, new Point(431, 323), new Point(440, 326), new Point(445, 327), new Point(445, 332), 1, MyColor.BLACK);
+        drawArc(g, new Point(145, 324), new Point(143, 325), new Point(136, 328), new Point(136, 332), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(431, 323), new Point(440, 326), new Point(445, 327), new Point(445, 332), 1, MyColor.EERIE_BLACK);
         
         // Coat
-        drawArc(g, new Point(40, 436), new Point(65, 435), new Point(117, 458), new Point(170, 472), 1, MyColor.BLACK);
+        drawArc(g, new Point(40, 436), new Point(65, 435), new Point(117, 458), new Point(170, 472), 1, MyColor.EERIE_BLACK);
         g.drawLine(96, 449, 117, 510);
         g.drawLine(460, 450, 441, 511);
         g.drawLine(40, 436, 40, 510);
         g.drawLine(40, 510, 175, 510);
-        drawArc(g, new Point(402, 468), new Point(446, 463), new Point(503, 424), new Point(546, 423), 1, MyColor.BLACK);
-        drawArc(g, new Point(546, 423), new Point(538, 437), new Point(527, 459), new Point(527, 486), 1, MyColor.BLACK);
+        drawArc(g, new Point(402, 468), new Point(446, 463), new Point(503, 424), new Point(546, 423), 1, MyColor.EERIE_BLACK);
+        drawArc(g, new Point(546, 423), new Point(538, 437), new Point(527, 459), new Point(527, 486), 1, MyColor.EERIE_BLACK);
         g.drawLine(527, 486, 527, 510);
         g.drawLine(527, 510, 397, 511);
         
@@ -635,6 +635,13 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         buffer = floodFill(buffer, new Point(428, 489), MyColor.PLACEHOLDER, MyColor.EERIE_BLACK);
         buffer = floodFill(buffer, new Point(66, 481), MyColor.PLACEHOLDER, MyColor.EERIE);
         buffer = floodFill(buffer, new Point(490, 476), MyColor.PLACEHOLDER, MyColor.EERIE);
+
+        buffer = floodFill(buffer, new Point(113, 455), MyColor.PLACEHOLDER, MyColor.EERIE_BLACK);
+        buffer = floodFill(buffer, new Point(430, 463), MyColor.PLACEHOLDER, MyColor.EERIE_BLACK);
+        buffer = floodFill(buffer, new Point(451, 457), MyColor.PLACEHOLDER, MyColor.EERIE_BLACK);
+        buffer = floodFill(buffer, new Point(458, 453), MyColor.PLACEHOLDER, MyColor.EERIE_BLACK);
+        buffer = floodFill(buffer, new Point(458, 465), MyColor.PLACEHOLDER, MyColor.EERIE_BLACK);
+        buffer = floodFill(buffer, new Point(460, 467), MyColor.PLACEHOLDER, MyColor.EERIE_BLACK);
 
         buffer = toTransparent(buffer);
 
