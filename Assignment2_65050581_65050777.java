@@ -422,7 +422,7 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         Graphics2D g = buffer.createGraphics();
         g.setColor(Color.WHITE);
         g.fillRect(0, 0, 601, 601);
-        
+
         // Face
         drawArc(g, new Point(113, 305), new Point(76, 72), new Point(501, 87), new Point(466, 289), 1, MyColor.BLACK);
         drawArc(g, new Point(113, 305), new Point(121, 337), new Point(139, 407), new Point(150, 427), 1, MyColor.BLACK);
@@ -445,7 +445,6 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         drawArc(g, new Point(107, 321), new Point(105, 316), new Point(103, 314), new Point(95, 314), 1, MyColor.BLACK);
         drawArc(g, new Point(95, 314), new Point(87, 314), new Point(87, 318), new Point(85, 330), 1, MyColor.BLACK);
         drawArc(g, new Point(85, 330), new Point(82, 349), new Point(85, 345), new Point(126, 382), 1, MyColor.BLACK);
-
 
         // Right Ear
         drawArc(g, new Point(461, 323), new Point(470, 300), new Point(493, 257), new Point(508, 271), 1, MyColor.BLACK);
@@ -488,7 +487,7 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         drawArc(g, new Point(114, 460), new Point(114, 452), new Point(116, 433), new Point(122, 425), 1, MyColor.BLACK);
         drawArc(g, new Point(122, 425), new Point(125, 435), new Point(131, 455), new Point(138, 465), 1, MyColor.BLACK);
         drawArc(g, new Point(138, 465), new Point(140, 459), new Point(145, 447), new Point(145, 442), 1, MyColor.BLACK);
-        drawArc(g, new Point(145, 442), new Point(145, 437), new Point(150, 455), new Point(153, 465), 1, MyColor.BLACK);
+        drawArc(g, new Point(145, 442), new Point(145, 437), new Point(150, 455), new Point(153, 466), 1, MyColor.BLACK);
 
         drawArc(g, new Point(460, 222), new Point(520, 237), new Point(517, 253), new Point(517, 260), 1, MyColor.BLACK);
         drawArc(g, new Point(517, 260), new Point(517, 284), new Point(526, 332), new Point(543, 338), 1, MyColor.BLACK);
@@ -539,10 +538,34 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         drawArc(g, new Point(145, 324), new Point(143, 325), new Point(136, 328), new Point(136, 332), 1, MyColor.BLACK);
         drawArc(g, new Point(431, 323), new Point(440, 326), new Point(445, 327), new Point(445, 332), 1, MyColor.BLACK);
         
+        // Coat
+        drawArc(g, new Point(40, 436), new Point(65, 435), new Point(117, 458), new Point(170, 472), 1, MyColor.BLACK);
+        g.drawLine(96, 449, 117, 510);
+        g.drawLine(460, 450, 441, 511);
+        g.drawLine(40, 436, 40, 510);
+        g.drawLine(40, 510, 175, 510);
+        drawArc(g, new Point(402, 468), new Point(446, 463), new Point(503, 424), new Point(546, 423), 1, MyColor.BLACK);
+        drawArc(g, new Point(546, 423), new Point(538, 437), new Point(527, 459), new Point(527, 486), 1, MyColor.BLACK);
+        g.drawLine(527, 486, 527, 510);
+        g.drawLine(527, 510, 397, 511);
+        
         buffer = floodFill(buffer, new Point(307, 226), Color.WHITE, MyColor.OIL);
+
         buffer = floodFill(buffer, new Point(246, 328), Color.WHITE, MyColor.TACAO);
-        // buffer = floodFill(buffer, new Point(487, 249), Color.WHITE, MyColor.EERIE_BLACK);
-        // buffer = floodFill(buffer, new Point(96, 253), Color.WHITE, MyColor.EERIE_BLACK);
+
+        buffer = floodFill(buffer, new Point(487, 249), Color.WHITE, MyColor.EERIE_BLACK);
+        buffer = floodFill(buffer, new Point(96, 253), Color.WHITE, MyColor.EERIE_BLACK);
+        buffer = floodFill(buffer, new Point(113, 404), Color.WHITE, MyColor.EERIE_BLACK);
+
+        buffer = floodFill(buffer, new Point(76, 324), Color.WHITE, MyColor.TACAO);
+        buffer = floodFill(buffer, new Point(502, 325), Color.WHITE, MyColor.TACAO);
+
+        buffer = floodFill(buffer, new Point(185, 491), Color.WHITE, MyColor.DARK_TACAO);
+
+        buffer = floodFill(buffer, new Point(128, 483), Color.WHITE, MyColor.EERIE_BLACK);
+        buffer = floodFill(buffer, new Point(428, 489), Color.WHITE, MyColor.EERIE_BLACK);
+        buffer = floodFill(buffer, new Point(66, 481), Color.WHITE, MyColor.EERIE);
+        buffer = floodFill(buffer, new Point(490, 476), Color.WHITE, MyColor.EERIE);
 
         buffer = toTransparent(buffer);
 
