@@ -54,7 +54,8 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         // mainBuffer = drawStrawHatStyle3();
         // mainBuffer = drawStrawHatStyle4();
         // mainBuffer = drawStrawHatStyle5();
-        mainBuffer = drawRogerFaceFront();
+        mainBuffer = drawLuffyBoy();
+        // mainBuffer = drawRogerFaceFront();
 
         g.drawImage(mainBuffer, 0, 0, null);
     }
@@ -646,6 +647,218 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         buffer = toTransparent(buffer);
 
         return buffer;
+    }
+
+    private BufferedImage drawLuffyBoy(){
+        BufferedImage buffer = new BufferedImage(601, 601, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g = buffer.createGraphics();
+        g.setColor(MyColor.PLACEHOLDER);
+        g.fillRect(0, 0, 601, 601);
+
+        // Face
+        drawArc(g, new Point(160,282), new Point(173,84), new Point(446,87), new Point(446, 288), 1, MyColor.BLACK);
+        g.drawLine(160,282, 161,342);
+        drawArc(g, new Point(161,342), new Point(166,364), new Point(178,410), new Point(186,422), 1, MyColor.BLACK);
+        drawArc(g, new Point(186,422), new Point(197,437), new Point(197,439), new Point(222,458), 1, MyColor.BLACK);
+        drawArc(g, new Point(222,458), new Point(248,477), new Point(285,499), new Point(311,502), 1, MyColor.BLACK);
+        drawArc(g, new Point(311,502), new Point(334,504), new Point(404,447), new Point(408,442), 1, MyColor.BLACK);
+        drawArc(g, new Point(408,442), new Point(414,437), new Point(426,423), new Point(432,409), 1, MyColor.BLACK);
+        drawArc(g, new Point(432,409), new Point(437,394), new Point(445,368), new Point(449,357), 1, MyColor.BLACK);
+        g.drawLine(449,357, 453,338);
+        drawArc(g, new Point(453,338), new Point(454,324), new Point(448,294), new Point(446,288), 1, MyColor.BLACK);
+        g.drawLine(159,274, 446,278);
+
+        // eyebrows
+        g.drawLine(270,317,209,285);
+        g.drawLine(357,310,389,301);
+        g.drawLine(399,297,421,286);
+
+        // eyes
+        drawArc(g, new Point(193,330), new Point(192,298), new Point(251,289), new Point(264,330), 1, MyColor.BLACK);
+        drawArc(g, new Point(196,354), new Point(199,358), new Point(208,367), new Point(221,370), 1, MyColor.BLACK);
+        drawArc(g, new Point(221,370), new Point(229,372), new Point(255,371), new Point(263,355), 1, MyColor.BLACK);
+        drawArc(g, new Point(193,330), new Point(192,334), new Point(191,345), new Point(196,354), 1, Color.WHITE); // **
+        drawArc(g, new Point(264,330), new Point(265,334), new Point(266,345), new Point(263,355), 1, Color.WHITE); // **
+        drawArc(g, new Point(222,326), new Point(223,319), new Point(237,313), new Point(242,326), 1, MyColor.BLACK);
+        drawArc(g, new Point(242,326), new Point(244,336), new Point(238,339), new Point(235,340), 1, MyColor.BLACK);
+        drawArc(g, new Point(235,340), new Point(233,340), new Point(230,340), new Point(229,340), 1, MyColor.BLACK);
+        drawArc(g, new Point(229,340), new Point(225,340), new Point(223,335), new Point(222,333), 1, MyColor.BLACK);
+        drawArc(g, new Point(222,333), new Point(221,331), new Point(222,328), new Point(222,326), 1, MyColor.BLACK);
+        drawArc(g, new Point(357,331), new Point(359,305), new Point(412,282), new Point(428,328), 1, MyColor.BLACK);
+        drawArc(g, new Point(360,358), new Point(361,369), new Point(408,383), new Point(425,351), 1, MyColor.BLACK);
+        drawArc(g, new Point(357,331), new Point(356,334), new Point(355,346), new Point(360,359), 1, Color.WHITE); // **
+        drawArc(g, new Point(428,328), new Point(428,333), new Point(429,345), new Point(425,351), 1, Color.WHITE); // **
+        drawArc(g, new Point(378,328), new Point(379,322), new Point(392,314), new Point(399,328), 1, MyColor.BLACK);
+        drawArc(g, new Point(399,328), new Point(401,336), new Point(396,341), new Point(393,342), 1, MyColor.BLACK);
+        drawArc(g, new Point(393,342), new Point(387,342), new Point(384,341), new Point(384,341), 1, MyColor.BLACK);
+        drawArc(g, new Point(384,341), new Point(380,340), new Point(378,336), new Point(378,335), 1, MyColor.BLACK);
+        drawArc(g, new Point(378,335), new Point(377,332), new Point(377,329), new Point(378,328), 1, MyColor.BLACK);
+
+        // hair
+        drawArc(g, new Point(163,274), new Point(166,295), new Point(174,340), new Point(180,347), 1, MyColor.BLACK);
+        drawArc(g, new Point(180,347), new Point(182,322), new Point(186,274), new Point(190,274), 1, MyColor.BLACK);
+        drawArc(g, new Point(226,275), new Point(230,285), new Point(241,307), new Point(247,315), 1, MyColor.BLACK);
+        drawArc(g, new Point(247,315), new Point(243,304), new Point(237,280), new Point(239,275), 1, MyColor.BLACK);
+        drawArc(g, new Point(306,276), new Point(313,291), new Point(332,323), new Point(350,332), 1, MyColor.BLACK);
+        drawArc(g, new Point(350,332), new Point(344,319), new Point(332,289), new Point(336,276), 1, MyColor.BLACK);
+        drawArc(g, new Point(376,277), new Point(382,288), new Point(396,313), new Point(398,321), 1, MyColor.BLACK);
+        drawArc(g, new Point(398,321), new Point(400,329), new Point(398,295), new Point(398,277), 1, MyColor.BLACK);
+        drawArc(g, new Point(419,278), new Point(424,291), new Point(435,319), new Point(435,328), 1, MyColor.BLACK);
+        drawArc(g, new Point(435,328), new Point(438,324), new Point(443,309), new Point(440,278), 1, MyColor.BLACK);
+
+        // ears
+        drawArc(g, new Point(445,368), new Point(462,347), new Point(478,305), new Point(484,288), 1, MyColor.BLACK);
+        g.drawLine(484,288, 447,288);
+        drawArc(g, new Point(474,316), new Point(480,311), new Point(494,305), new Point(497,316), 1, MyColor.BLACK);
+        drawArc(g, new Point(497,316), new Point(500,330), new Point(500,347), new Point(494,360), 1, MyColor.BLACK);
+        drawArc(g, new Point(494,360), new Point(490,370), new Point(484,377), new Point(481,379), 1, MyColor.BLACK);
+        drawArc(g, new Point(481,379), new Point(473,387), new Point(455,402), new Point(445,406), 1, MyColor.BLACK);
+        drawArc(g, new Point(445,406), new Point(434,410), new Point(432,408), new Point(432,407), 1, MyColor.BLACK);
+        drawArc(g, new Point(463,341), new Point(467,333), new Point(479,318), new Point(487,319), 1, MyColor.BLACK);
+        drawArc(g, new Point(487,319), new Point(488,319), new Point(491,321), new Point(490,329), 1, MyColor.BLACK);
+        drawArc(g, new Point(469,333), new Point(470,337), new Point(474,344), new Point(484,339), 1, MyColor.BLACK);
+        g.drawLine(439,388, 456,372);
+        g.drawLine(456,372, 456,362);
+        g.drawLine(456,362,456,355);
+        drawArc(g, new Point(456,355), new Point(460,351), new Point(470,346), new Point(474,355), 1, MyColor.BLACK);
+        drawArc(g, new Point(474,355), new Point(475,360), new Point(474,371), new Point(465,382), 1, MyColor.BLACK);
+        g.drawLine(465,382,456,390);
+        g.drawLine(456,390,451,391);
+        g.drawLine(451,391,435,399);
+        g.drawLine(160,281,100,280);
+        drawArc(g, new Point(100,280), new Point(101,284), new Point(100,298), new Point(86,320), 1, MyColor.BLACK);
+        drawArc(g, new Point(86,320), new Point(92,316), new Point(103,306), new Point(107,300), 1, MyColor.BLACK);
+        drawArc(g, new Point(107,300), new Point(108,314), new Point(110,344), new Point(106,349), 1, MyColor.BLACK);
+        g.drawLine(106,349,117,338);
+        drawArc(g, new Point(169,376), new Point(163,358), new Point(150,320), new Point(146,318), 1, MyColor.BLACK);
+        drawArc(g, new Point(146,318), new Point(142,311), new Point(127,303), new Point(119,320), 1, MyColor.BLACK);
+        drawArc(g, new Point(119,320), new Point(117,327), new Point(115,343), new Point(119,354), 1, MyColor.BLACK);
+        drawArc(g, new Point(119,354), new Point(124,368), new Point(145,400), new Point(172,413), 1, MyColor.BLACK);
+        drawArc(g, new Point(172,413), new Point(174,413), new Point(179,413), new Point(180,410), 1, MyColor.BLACK);
+        drawArc(g, new Point(176,399), new Point(170,394), new Point(158,383), new Point(156,378), 1, MyColor.BLACK);
+        drawArc(g, new Point(156,378), new Point(154,372), new Point(156,360), new Point(158,355), 1, MyColor.BLACK);
+        drawArc(g, new Point(157,354), new Point(153,352), new Point(145,349), new Point(140,352), 1, MyColor.BLACK);
+        g.drawLine(140,352,140,370);
+        drawArc(g, new Point(140,370), new Point(141,374), new Point(144,382), new Point(152,388), 1, MyColor.BLACK);
+        drawArc(g, new Point(152,388), new Point(161,394), new Point(162,394), new Point(167,400), 1, MyColor.BLACK);
+        g.drawLine(157,354,146,334);
+        drawArc(g, new Point(146,334), new Point(132,311), new Point(121,326), new Point(124,339), 1, MyColor.BLACK);
+        g.drawLine(147,336,136,345);
+        g.drawLine(136,345,128,338);
+        drawArc(g, new Point(490,329), new Point(489,335), new Point(488,336), new Point(484,339), 1, MyColor.SKIN_LUFFY_SHADOW);
+        g.drawLine(167,400,177,400);
+
+        // nose
+        drawArc(g, new Point(289,326), new Point(291,327), new Point(294,329), new Point(295,333), 1, MyColor.BLACK);
+        g.drawLine(295,333,297,399);
+        drawArc(g, new Point(297,399), new Point(297,400), new Point(298,402), new Point(300,403), 1, MyColor.BLACK);
+        g.drawLine(316,405,320,400);
+
+        // mouth
+        drawArc(g, new Point(229,421), new Point(251,428), new Point(286,444), new Point(367,433), 1, MyColor.BLACK);
+        drawArc(g, new Point(367,433), new Point(371,432), new Point(382,430), new Point(389,426), 1, MyColor.BLACK);
+
+        // scar
+        drawArc(g, new Point(368,387), new Point(379,389), new Point(406,389), new Point(419,381), 1, MyColor.BLACK);
+        drawArc(g, new Point(383,385), new Point(383,387), new Point(383,390), new Point(385,394), 1, MyColor.BLACK);
+        drawArc(g, new Point(409,379), new Point(409,382), new Point(410,387), new Point(412,391), 1, MyColor.BLACK);
+
+        // body
+        drawArc(g, new Point(219,456), new Point(227,480), new Point(229,522), new Point(226,534), 1, MyColor.BLACK);
+        drawArc(g, new Point(396,453), new Point(394,472), new Point(389,516), new Point(391,538), 1, MyColor.BLACK);
+        drawArc(g, new Point(227,518), new Point(234,529), new Point(253,555), new Point(276,567), 1, MyColor.SKIN_LUFFY_SHADOW);
+        drawArc(g, new Point(276,567), new Point(280,569), new Point(293,579), new Point(310,563), 1, MyColor.SKIN_LUFFY_SHADOW);
+        drawArc(g, new Point(310,563), new Point(334,550), new Point(382,521), new Point(391,506), 1, MyColor.SKIN_LUFFY_SHADOW);
+        drawArc(g, new Point(227,519), new Point(220,527), new Point(199,544), new Point(180,549), 1, MyColor.BLACK);
+        drawArc(g, new Point(180,549), new Point(174,559), new Point(161,583), new Point(158,599), 1, MyColor.BLACK);
+        g.drawLine(201,540,195,537);
+        drawArc(g, new Point(195,537), new Point(190,535), new Point(186,538), new Point(184,539), 1, MyColor.BLACK);
+        drawArc(g, new Point(184,539), new Point(179,544), new Point(178,551), new Point(177,554), 1, MyColor.BLACK);
+        drawArc(g, new Point(215,531), new Point(207,526), new Point(190,517), new Point(188,517), 1, MyColor.BLACK);
+        drawArc(g, new Point(188,517), new Point(185,516), new Point(179,515), new Point(175,520), 1, MyColor.BLACK);
+        drawArc(g, new Point(175,520), new Point(171,526), new Point(159,539), new Point(157,542), 1, MyColor.BLACK);
+        drawArc(g, new Point(160,538), new Point(141,547), new Point(98,567), new Point(88,568), 1, MyColor.BLACK);
+        g.drawLine(88,568,77,568);
+        drawArc(g, new Point(77,568), new Point(75,570), new Point(72,580), new Point(70,599), 1, MyColor.BLACK);
+        drawArc(g, new Point(73,580), new Point(58,583), new Point(20,590), new Point(13,600), 1, MyColor.BLACK);
+        g.drawLine(13,600,590,600);
+        drawArc(g, new Point(153,557), new Point(149,564), new Point(140,581), new Point(137,596), 1, MyColor.BLACK);
+        g.drawLine(92,593,92,599);
+        g.drawLine(359,573,351,599);
+        drawArc(g, new Point(391,519), new Point(404,531), new Point(415,541), new Point(426,545), 1, MyColor.BLACK);
+        g.drawLine(426,545,444,553);
+        drawArc(g, new Point(444,553), new Point(446,553), new Point(451,556), new Point(453,560), 1, MyColor.BLACK);
+        drawArc(g, new Point(453,560), new Point(459,568), new Point(469,584), new Point(473,593), 1, MyColor.BLACK);
+        g.drawLine(473,593,473,599);
+        drawArc(g, new Point(410,535), new Point(416,529), new Point(431,518), new Point(439,516), 1, MyColor.BLACK);
+        drawArc(g, new Point(439,516), new Point(441,515), new Point(457,526), new Point(464,535), 1, MyColor.BLACK);
+        drawArc(g, new Point(464,535), new Point(478,555), new Point(495,588), new Point(498,599), 1, MyColor.BLACK);
+        g.drawLine(426,545,439,538);
+        g.drawLine(439,538,453,560);
+        drawArc(g, new Point(473,548), new Point(483,555), new Point(512,571), new Point(544,578), 1, MyColor.BLACK);
+        drawArc(g, new Point(544,578), new Point(551,578), new Point(566,578), new Point(567,578), 1, MyColor.BLACK);
+        drawArc(g, new Point(567,578), new Point(569,580), new Point(574,588), new Point(577,599), 1, MyColor.BLACK);
+        drawArc(g, new Point(575,594), new Point(579,595), new Point(587,598), new Point(590,600), 1, MyColor.BLACK);
+        g.drawLine(173,413,174,434);
+        g.drawLine(174,434,184,419);
+        g.drawLine(191,429,196,465);
+        drawArc(g, new Point(196,465), new Point(198,463), new Point(203,456), new Point(207,447), 1, MyColor.BLACK);
+        drawArc(g, new Point(209,448), new Point(211,454), new Point(216,469), new Point(224,481), 1, MyColor.BLACK);
+        g.drawLine(438,409,438,437);
+        drawArc(g, new Point(438,437), new Point(435,435), new Point(427,427), new Point(426,421), 1, MyColor.BLACK);
+        g.drawLine(426,421,422,449);
+        drawArc(g, new Point(422,449), new Point(420,446), new Point(416,439), new Point(416,434), 1, MyColor.BLACK);
+        g.drawLine(416,434,404,463);
+        drawArc(g, new Point(404,463), new Point(403,460), new Point(401,454), new Point(401,449), 1, MyColor.BLACK);
+
+       buffer = floodFill(buffer, new Point(133,296), MyColor.PLACEHOLDER, MyColor.HAIR_LUFFY);
+       buffer = floodFill(buffer, new Point(174,291), MyColor.PLACEHOLDER, MyColor.HAIR_LUFFY);
+       buffer = floodFill(buffer, new Point(235,286), MyColor.PLACEHOLDER, MyColor.HAIR_LUFFY);
+       buffer = floodFill(buffer, new Point(241,303), MyColor.PLACEHOLDER, MyColor.HAIR_LUFFY);
+       buffer = floodFill(buffer, new Point(322,290), MyColor.PLACEHOLDER, MyColor.HAIR_LUFFY);
+       buffer = floodFill(buffer, new Point(389,287), MyColor.PLACEHOLDER, MyColor.HAIR_LUFFY);
+       buffer = floodFill(buffer, new Point(394,307), MyColor.PLACEHOLDER, MyColor.HAIR_LUFFY);
+       buffer = floodFill(buffer, new Point(432,292), MyColor.PLACEHOLDER, MyColor.HAIR_LUFFY);
+       buffer = floodFill(buffer, new Point(464,304), MyColor.PLACEHOLDER, MyColor.HAIR_LUFFY);
+       buffer = floodFill(buffer, new Point(178,422), MyColor.PLACEHOLDER, MyColor.HAIR_LUFFY);
+       buffer = floodFill(buffer, new Point(199,451), MyColor.PLACEHOLDER, MyColor.HAIR_LUFFY);
+       buffer = floodFill(buffer, new Point(218,463), MyColor.PLACEHOLDER, MyColor.HAIR_LUFFY);
+       buffer = floodFill(buffer, new Point(406,453), MyColor.PLACEHOLDER, MyColor.HAIR_LUFFY);
+       buffer = floodFill(buffer, new Point(421,438), MyColor.PLACEHOLDER, MyColor.HAIR_LUFFY);
+       buffer = floodFill(buffer, new Point(433,423), MyColor.PLACEHOLDER, MyColor.HAIR_LUFFY);
+       buffer = floodFill(buffer, new Point(229,354), MyColor.PLACEHOLDER, Color.WHITE);
+       buffer = floodFill(buffer, new Point(384,350), MyColor.PLACEHOLDER, Color.WHITE);
+       buffer = floodFill(buffer, new Point(230,331), MyColor.PLACEHOLDER, MyColor.HAIR_LUFFY);
+       buffer = floodFill(buffer, new Point(387,333), MyColor.PLACEHOLDER, MyColor.HAIR_LUFFY);
+       buffer = floodFill(buffer, new Point(257,400), MyColor.PLACEHOLDER, MyColor.SKIN_LUFFY_COLOR);
+       buffer = floodFill(buffer, new Point(219,561), MyColor.PLACEHOLDER, MyColor.SKIN_LUFFY_COLOR);
+       buffer = floodFill(buffer, new Point(410,561), MyColor.PLACEHOLDER, MyColor.SKIN_LUFFY_COLOR);
+       buffer = floodFill(buffer, new Point(405,285), MyColor.PLACEHOLDER, MyColor.SKIN_LUFFY_COLOR);
+       buffer = floodFill(buffer, new Point(486,352), MyColor.PLACEHOLDER, MyColor.SKIN_LUFFY_COLOR);
+       buffer = floodFill(buffer, new Point(448,371), MyColor.PLACEHOLDER, MyColor.SKIN_LUFFY_COLOR);
+       buffer = floodFill(buffer, new Point(127,354), MyColor.PLACEHOLDER, MyColor.SKIN_LUFFY_COLOR);
+
+       buffer = floodFill(buffer, new Point(54,593), MyColor.PLACEHOLDER, MyColor.SKIN_LUFFY_COLOR);
+       buffer = floodFill(buffer, new Point(580,599), MyColor.PLACEHOLDER, MyColor.SKIN_LUFFY_COLOR);
+
+       buffer = floodFill(buffer, new Point(296,530), MyColor.PLACEHOLDER, MyColor.SKIN_LUFFY_SHADOW);
+       buffer = floodFill(buffer, new Point(481,330), MyColor.PLACEHOLDER, MyColor.SKIN_LUFFY_SHADOW);
+       buffer = floodFill(buffer, new Point(462,369), MyColor.PLACEHOLDER, MyColor.SKIN_LUFFY_SHADOW);
+       buffer = floodFill(buffer, new Point(149,367), MyColor.PLACEHOLDER, MyColor.SKIN_LUFFY_SHADOW);
+       buffer = floodFill(buffer, new Point(163,554), MyColor.PLACEHOLDER, MyColor.SHIRT_LUFFY);
+       buffer = floodFill(buffer, new Point(469,563), MyColor.PLACEHOLDER, MyColor.SHIRT_LUFFY);
+       buffer = floodFill(buffer, new Point(493,567), MyColor.PLACEHOLDER, MyColor.SHIRT_LUFFY);
+       buffer = floodFill(buffer, new Point(190,543), MyColor.PLACEHOLDER, MyColor.SHIRT_LUFFY_SHADOW);
+       buffer = floodFill(buffer, new Point(438,547), MyColor.PLACEHOLDER, MyColor.SHIRT_LUFFY_SHADOW);
+
+        // g.setColor(Color.RED);
+        // plot(g, 241, 303,1);
+
+
+        buffer = toTransparent(buffer);
+
+        return buffer;
+
     }
 
     private BufferedImage toTransparent(BufferedImage image) {

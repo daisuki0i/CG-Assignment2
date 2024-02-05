@@ -16,5 +16,11 @@ public class MyColor extends Color {
 	public static final Color STRAW_HAT_SHADOW = Color.decode("#7C4E1B");
 	public static final Color HEADDAND = Color.decode("#DC002E");
 	public static final Color HEADDAND_SHADOW = Color.decode("#8C0324");
+	public static final Color HAIR_LUFFY = Color.decode("#1E1E1E");
+	public static final Color SKIN_LUFFY_COLOR = Color.decode("#F1C6A3");
+	public static final Color SKIN_LUFFY_SHADOW = Color.decode("#CC9167");
+
+	public static final Color SHIRT_LUFFY = Color.decode("#9D2024");
+	public static final Color SHIRT_LUFFY_SHADOW = Color.decode("#621D16");
 	
 }
