@@ -30,4 +30,10 @@ public class MyColor extends Color {
 	public static final Color SKIN_LUFFY_CHILD = Color.decode("#EFC8A1");
 	public static final Color SKIN_LUFFY_CHILD_SHADOW = Color.decode("#BA7F5E");
 	
+	public static final Color TROUSERS_LUFFY = Color.decode("#2B5F91");
+	public static final Color TROUSERS_LUFFY_SHADOW = Color.decode("#1A4361");
+	public static final Color PANTSEDGE_LUFFY  = Color.decode("#B5D5D4");
+	public static final Color SHOE = Color.decode("#918976");
+	public static final Color SHOEEDGE = Color.decode("#29201B");
+	
 }

@@ -55,7 +55,8 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         // mainBuffer = drawStrawHatStyle4();
         // mainBuffer = drawStrawHatStyle5();
         // mainBuffer = drawLuffyBoy();
-        mainBuffer = drawLuffyChild();
+        // mainBuffer = drawLuffyChild();
+        mainBuffer = drawLuffyChildStandWithBack();
         // mainBuffer = drawRogerFaceFront();
 
         g.drawImage(mainBuffer, 0, 0, null);
@@ -189,7 +190,7 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
     private BufferedImage drawStrawHatStyle1 (){
         BufferedImage buffer = new BufferedImage(601, 601, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g = buffer.createGraphics();
-        g.setColor(Color.WHITE);
+        g.setColor(MyColor.PLACEHOLDER);
         g.fillRect(0, 0, 601, 601);
 
         drawArc(g, new Point(187,302), new Point(174,126), new Point(477,122), new Point(451,304), 1, MyColor.BLACK);
@@ -243,9 +244,9 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         drawArc(g, new Point(431,371), new Point(443,371), new Point(470,371), new Point(476,369), 1, MyColor.BLACK);
         drawArc(g, new Point(446,378), new Point(463,379), new Point(500,379), new Point(508,377), 1, MyColor.BLACK);
 
-        buffer = floodFill(buffer, new Point(327,243), Color.WHITE, MyColor.STRAW_HAT);
-        buffer = floodFill(buffer, new Point(87,371), Color.WHITE, MyColor.STRAW_HAT);
-        buffer = floodFill(buffer, new Point(307,330), Color.WHITE, MyColor.HEADDAND);
+        buffer = floodFill(buffer, new Point(327,243), MyColor.PLACEHOLDER, MyColor.STRAW_HAT);
+        buffer = floodFill(buffer, new Point(87,371), MyColor.PLACEHOLDER, MyColor.STRAW_HAT);
+        buffer = floodFill(buffer, new Point(307,330), MyColor.PLACEHOLDER, MyColor.HEADDAND);
 
         buffer = toTransparent(buffer);
 
@@ -255,7 +256,7 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
     private BufferedImage drawStrawHatStyle2 (){
         BufferedImage buffer = new BufferedImage(601, 601, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g = buffer.createGraphics();
-        g.setColor(Color.WHITE);
+        g.setColor(MyColor.PLACEHOLDER);
         g.fillRect(0, 0, 601, 601);
 
         drawArc(g, new Point(187,361), new Point(165,179), new Point(496,175), new Point(452,389), 1, MyColor.BLACK);
@@ -303,11 +304,11 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         drawArc(g, new Point(472,464), new Point(479,464), new Point(494,463), new Point(502,459), 1, MyColor.BLACK);
         drawArc(g, new Point(472,471), new Point(485,470), new Point(514,467), new Point(526,458), 1, MyColor.BLACK);
 
-        buffer = floodFill(buffer, new Point(324,339), Color.WHITE, MyColor.STRAW_HAT);
-        buffer = floodFill(buffer, new Point(152,423), Color.WHITE, MyColor.STRAW_HAT);
-        buffer = floodFill(buffer, new Point(245,390), Color.WHITE, MyColor.HEADDAND);
-        buffer = floodFill(buffer, new Point(308,420), Color.WHITE, MyColor.HEADDAND_SHADOW);
-        buffer = floodFill(buffer, new Point(201,408), Color.WHITE, MyColor.HEADDAND_SHADOW);
+        buffer = floodFill(buffer, new Point(324,339), MyColor.PLACEHOLDER, MyColor.STRAW_HAT);
+        buffer = floodFill(buffer, new Point(152,423), MyColor.PLACEHOLDER, MyColor.STRAW_HAT);
+        buffer = floodFill(buffer, new Point(245,390), MyColor.PLACEHOLDER, MyColor.HEADDAND);
+        buffer = floodFill(buffer, new Point(308,420), MyColor.PLACEHOLDER, MyColor.HEADDAND_SHADOW);
+        buffer = floodFill(buffer, new Point(201,408), MyColor.PLACEHOLDER, MyColor.HEADDAND_SHADOW);
 
         buffer = toTransparent(buffer);
 
@@ -317,7 +318,7 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
     private BufferedImage drawStrawHatStyle3 (){
         BufferedImage buffer = new BufferedImage(601, 601, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g = buffer.createGraphics();
-        g.setColor(Color.WHITE);
+        g.setColor(MyColor.PLACEHOLDER);
         g.fillRect(0, 0, 601, 601);
 
         drawArc(g, new Point(185,329), new Point(140,146), new Point(441,84), new Point(426,323), 1, MyColor.BLACK);
@@ -358,9 +359,9 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         drawArc(g, new Point(405,399), new Point(415,397), new Point(439,391), new Point(456,382), 1, MyColor.BLACK);
         drawArc(g, new Point(430,403), new Point(445,399), new Point(476,387), new Point(487,379), 1, MyColor.BLACK);
 
-        buffer = floodFill(buffer, new Point(303,282), Color.WHITE, MyColor.STRAW_HAT);
-        buffer = floodFill(buffer, new Point(304,423), Color.WHITE, MyColor.STRAW_HAT);
-        buffer = floodFill(buffer, new Point(301,380), Color.WHITE, MyColor.HEADDAND);
+        buffer = floodFill(buffer, new Point(303,282), MyColor.PLACEHOLDER, MyColor.STRAW_HAT);
+        buffer = floodFill(buffer, new Point(304,423), MyColor.PLACEHOLDER, MyColor.STRAW_HAT);
+        buffer = floodFill(buffer, new Point(301,380), MyColor.PLACEHOLDER, MyColor.HEADDAND);
 
         buffer = toTransparent(buffer);
 
@@ -370,7 +371,7 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
     private BufferedImage drawStrawHatStyle4(){
         BufferedImage buffer = new BufferedImage(601, 601, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g = buffer.createGraphics();
-        g.setColor(Color.WHITE);
+        g.setColor(MyColor.PLACEHOLDER);
         g.fillRect(0, 0, 601, 601);
 
         drawArc(g, new Point(164,349), new Point(81,208), new Point(386,27), new Point(452,273), 1, MyColor.BLACK);
@@ -416,10 +417,10 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         drawArc(g, new Point(355,344), new Point(362,342), new Point(383,337), new Point(407,337), 1, MyColor.BLACK);
         drawArc(g, new Point(333,352), new Point(346,349), new Point(377,343), new Point(391,344), 1, MyColor.BLACK);
 
-        buffer = floodFill(buffer, new Point(322,230), Color.WHITE, MyColor.STRAW_HAT);
-        buffer = floodFill(buffer, new Point(319,380), Color.WHITE, MyColor.STRAW_HAT);
-        buffer = floodFill(buffer, new Point(138,435), Color.WHITE, MyColor.STRAW_HAT_SHADOW);
-        buffer = floodFill(buffer, new Point(321,324), Color.WHITE, MyColor.HEADDAND);
+        buffer = floodFill(buffer, new Point(322,230), MyColor.PLACEHOLDER, MyColor.STRAW_HAT);
+        buffer = floodFill(buffer, new Point(319,380), MyColor.PLACEHOLDER, MyColor.STRAW_HAT);
+        buffer = floodFill(buffer, new Point(138,435), MyColor.PLACEHOLDER, MyColor.STRAW_HAT_SHADOW);
+        buffer = floodFill(buffer, new Point(321,324), MyColor.PLACEHOLDER, MyColor.HEADDAND);
 
         buffer = toTransparent(buffer);
 
@@ -429,7 +430,7 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
     private BufferedImage drawStrawHatStyle5 (){
         BufferedImage buffer = new BufferedImage(601, 601, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g = buffer.createGraphics();
-        g.setColor(Color.WHITE);
+        g.setColor(MyColor.PLACEHOLDER);
         g.fillRect(0, 0, 601, 601);
 
         drawArc(g, new Point(167,300), new Point(192,326), new Point(353,349), new Point(449,320), 1, MyColor.BLACK); 
@@ -479,9 +480,9 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         g.drawLine(364,405,433,405);
         g.drawLine(408,411,457,404);
 
-        buffer = floodFill(buffer, new Point(304,263), Color.WHITE, MyColor.STRAW_HAT);
-        buffer = floodFill(buffer, new Point(298,406), Color.WHITE, MyColor.STRAW_HAT);
-        buffer = floodFill(buffer, new Point(311,342), Color.WHITE, MyColor.HEADDAND);
+        buffer = floodFill(buffer, new Point(304,263), MyColor.PLACEHOLDER, MyColor.STRAW_HAT);
+        buffer = floodFill(buffer, new Point(298,406), MyColor.PLACEHOLDER, MyColor.STRAW_HAT);
+        buffer = floodFill(buffer, new Point(311,342), MyColor.PLACEHOLDER, MyColor.HEADDAND);
         
         buffer = toTransparent(buffer);
 
@@ -960,9 +961,9 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         drawArc(g, new Point(357,261), new Point(350,267), new Point(344,261), new Point(343,258), 1, MyColor.BLACK);
         drawArc(g, new Point(347,263), new Point(345,265), new Point(345,269), new Point(346,271), 1, MyColor.SKIN_LUFFY_SHADOW);
 
-        // body
+        // // body
         drawArc(g, new Point(270,353), new Point(279,365), new Point(271,383), new Point(273,387), 1, MyColor.BLACK);
-        drawArc(g, new Point(266,394), new Point(287,397), new Point(335,332), new Point(341,331), 1, MyColor.BLACK);
+        drawArc(g, new Point(266,394), new Point(287,397), new Point(335,332), new Point(341,331), 1, MyColor.SKIN_LUFFY_CHILD_SHADOW);
         drawArc(g, new Point(274,373), new Point(271,373), new Point(266,383), new Point(264,388), 1, MyColor.BLACK);
         drawArc(g, new Point(264,388), new Point(263,395), new Point(270,396), new Point(273,395), 1, MyColor.BLACK);
         drawArc(g, new Point(273,395), new Point(294,393), new Point(333,370), new Point(349,350), 1, MyColor.BLACK);
@@ -1105,10 +1106,12 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         buffer = floodFill(buffer, new Point(226,235), MyColor.PLACEHOLDER, MyColor.HAIR_LUFFY);
         buffer = floodFill(buffer, new Point(270,234), MyColor.PLACEHOLDER, MyColor.HAIR_LUFFY);
         buffer = floodFill(buffer, new Point(380,227), MyColor.PLACEHOLDER, MyColor.HAIR_LUFFY);
+
         buffer = floodFill(buffer, new Point(296,292), MyColor.PLACEHOLDER, MyColor.SKIN_LUFFY_CHILD);
         buffer = floodFill(buffer, new Point(332,353), MyColor.PLACEHOLDER, MyColor.SKIN_LUFFY_CHILD);
         buffer = floodFill(buffer, new Point(208,497), MyColor.PLACEHOLDER, MyColor.SKIN_LUFFY_CHILD);
         buffer = floodFill(buffer, new Point(404,554), MyColor.PLACEHOLDER, MyColor.SKIN_LUFFY_CHILD);
+
         buffer = floodFill(buffer, new Point(202,282), MyColor.PLACEHOLDER, MyColor.SKIN_LUFFY_CHILD_SHADOW);
         buffer = floodFill(buffer, new Point(285,361), MyColor.PLACEHOLDER, MyColor.SKIN_LUFFY_CHILD_SHADOW);
         buffer = floodFill(buffer, new Point(347,277), MyColor.PLACEHOLDER, MyColor.SKIN_LUFFY_CHILD_SHADOW);
@@ -1118,29 +1121,188 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         buffer = floodFill(buffer, new Point(292,242), MyColor.PLACEHOLDER, MyColor.SKIN_LUFFY_CHILD_SHADOW);
         buffer = floodFill(buffer, new Point(177,293), MyColor.PLACEHOLDER, MyColor.SKIN_LUFFY_CHILD_SHADOW);
         buffer = floodFill(buffer, new Point(375,516), MyColor.PLACEHOLDER, MyColor.SKIN_LUFFY_CHILD_SHADOW);
+
         buffer = floodFill(buffer, new Point(176,279), MyColor.PLACEHOLDER, Color.WHITE);
         buffer = floodFill(buffer, new Point(255,281), MyColor.PLACEHOLDER, Color.WHITE);
         buffer = floodFill(buffer, new Point(254,260), MyColor.PLACEHOLDER, Color.WHITE);
         buffer = floodFill(buffer, new Point(242,330), MyColor.PLACEHOLDER, Color.WHITE);
         buffer = floodFill(buffer, new Point(180,268), MyColor.PLACEHOLDER, Color.BLACK);
         buffer = floodFill(buffer, new Point(244,267), MyColor.PLACEHOLDER, Color.BLACK);
+
         buffer = floodFill(buffer, new Point(284,401), MyColor.PLACEHOLDER, MyColor.BLUE_COLOR);
         buffer = floodFill(buffer, new Point(372,499), MyColor.PLACEHOLDER, MyColor.BLUE_COLOR);
         buffer = floodFill(buffer, new Point(209,474), MyColor.PLACEHOLDER, MyColor.BLUE_COLOR);
+
         buffer = floodFill(buffer, new Point(303,442), MyColor.PLACEHOLDER, MyColor.SHIRT_LUFFY_CHILD);
+
         buffer = floodFill(buffer, new Point(224,460), MyColor.PLACEHOLDER, MyColor.SHIRT_LUFFY_CHILD_SHADOW);
         buffer = floodFill(buffer, new Point(216,511), MyColor.PLACEHOLDER, MyColor.SHIRT_LUFFY_CHILD_SHADOW);
         buffer = floodFill(buffer, new Point(209,554), MyColor.PLACEHOLDER, MyColor.SHIRT_LUFFY_CHILD_SHADOW);
         buffer = floodFill(buffer, new Point(348,495), MyColor.PLACEHOLDER, MyColor.SHIRT_LUFFY_CHILD_SHADOW);
         buffer = floodFill(buffer, new Point(259,596), MyColor.PLACEHOLDER, MyColor.SHIRT_LUFFY_CHILD_SHADOW);
+
         buffer = floodFill(buffer, new Point(251,457), MyColor.PLACEHOLDER, MyColor.RED_COLOR);
         buffer = floodFill(buffer, new Point(237,526), MyColor.PLACEHOLDER, MyColor.RED_COLOR);
         buffer = floodFill(buffer, new Point(215,537), MyColor.PLACEHOLDER, MyColor.RED_SHADOW);
         buffer = floodFill(buffer, new Point(234,506), MyColor.PLACEHOLDER, MyColor.RED_SHADOW);
-
         buffer = floodFill(buffer, new Point(234,506), MyColor.PLACEHOLDER, MyColor.RED_SHADOW);
         buffer = floodFill(buffer, new Point(234,506), MyColor.PLACEHOLDER, MyColor.RED_SHADOW);
 
+        buffer = floodFill(buffer, new Point(218,484), MyColor.PLACEHOLDER, MyColor.BLUE_SHADOW);
+        buffer = floodFill(buffer, new Point(226,485), MyColor.PLACEHOLDER, MyColor.BLUE_SHADOW);
+        buffer = floodFill(buffer, new Point(250,489), MyColor.PLACEHOLDER, MyColor.BLUE_COLOR);
+        buffer = floodFill(buffer, new Point(261,493), MyColor.PLACEHOLDER, MyColor.BLUE_COLOR);
+        buffer = floodFill(buffer, new Point(278,490), MyColor.PLACEHOLDER, MyColor.BLUE_COLOR);
+
+
+        buffer = toTransparent(buffer);
+
+        return buffer;
+    }
+
+    private BufferedImage drawLuffyChildStandWithBack(){
+        BufferedImage buffer = new BufferedImage(601, 601, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g = buffer.createGraphics();
+        g.setColor(MyColor.PLACEHOLDER);
+        g.fillRect(0, 0, 601, 601);
+
+        // hair
+        drawArc(g, new Point(230,153), new Point(231,157), new Point(230,168), new Point(221,182), 1, MyColor.BLACK);
+        drawArc(g, new Point(221,182), new Point(224,182), new Point(230,180), new Point(233,176), 1, MyColor.BLACK);
+        drawArc(g, new Point(233,176), new Point(234,180), new Point(234,190), new Point(229,201), 1, MyColor.BLACK);
+        drawArc(g, new Point(229,201), new Point(230,201), new Point(235,200), new Point(242,193), 1, MyColor.BLACK);
+        drawArc(g, new Point(242,193), new Point(244,199), new Point(245,213), new Point(242,228), 1, MyColor.BLACK);
+        drawArc(g, new Point(242,228), new Point(245,227), new Point(252,223), new Point(256,218), 1, MyColor.BLACK);
+        drawArc(g, new Point(256,218), new Point(260,219), new Point(271,218), new Point(277,214), 1, MyColor.BLACK);
+        g.drawLine(277,214,277,221);
+        g.drawLine(277,221,295,207);
+        g.drawLine(295,207,296,211);
+        g.drawLine(296,211,301,201);
+        g.drawLine(301,201,309,211);
+        drawArc(g, new Point(309,211), new Point(310,207), new Point(313,197), new Point(323,188), 1, MyColor.BLACK);
+        g.drawLine(323,188,335,171);
+        g.drawLine(335,171,230,153);
+
+        // ear
+        g.drawLine(321,182,307,201);
+        drawArc(g, new Point(307,201), new Point(300,186), new Point(313,183), new Point(321,182), 1, MyColor.BLACK);
+
+        // face
+        drawArc(g, new Point(324,186), new Point(320,204), new Point(328,233), new Point(290,224), 1, MyColor.BLACK);
+        g.drawLine(293,216,287,231);
+        g.drawLine(256,218,254,229);
+
+        // body
+        drawArc(g, new Point(254,229), new Point(257,231), new Point(269,235), new Point(287,231), 1, MyColor.BLACK);
+        drawArc(g, new Point(254,229), new Point(240,229), new Point(222,232), new Point(225,259), 1, MyColor.BLACK);
+        g.drawLine(228,260,225,343);
+        drawArc(g, new Point(225,343), new Point(237,345), new Point(268,348), new Point(295,344), 1, MyColor.BLACK);
+        g.drawLine(295,344,286,330);
+        g.drawLine(286,330,286,282);
+        drawArc(g, new Point(287,231), new Point(292,231), new Point(303,234), new Point(307,242), 1, MyColor.BLACK);
+        g.drawLine(307,242,308,276);
+        g.drawLine(308,276,280,276);
+        drawArc(g, new Point(280,276), new Point(278,275), new Point(273,270), new Point(271,262), 1, MyColor.BLACK);
+        drawArc(g, new Point(280,276), new Point(279,280), new Point(281,282), new Point(282,282), 1, MyColor.BLACK);
+        g.drawLine(282,282,308,282);
+        drawArc(g, new Point(308,282), new Point(310,279), new Point(309,277), new Point(308,276), 1, MyColor.BLACK);
+        g.drawLine(295,345,297,348);
+        drawArc(g, new Point(297,348), new Point(296,373), new Point(296,383), new Point(299,388), 1, MyColor.BLACK);
+        drawArc(g, new Point(299,388), new Point(303,388), new Point(307,388), new Point(310,387), 1, MyColor.BLACK);
+        drawArc(g, new Point(310,387), new Point(315,386), new Point(318,383), new Point(319,382), 1, MyColor.BLACK);
+        drawArc(g, new Point(319,382), new Point(326,372), new Point(316,361), new Point(310,356), 1, MyColor.BLACK);
+        drawArc(g, new Point(310,356), new Point(307,351), new Point(305,337), new Point(304,331), 1, MyColor.BLACK);
+        g.drawLine(304,331,302,282);
+        drawArc(g, new Point(230,333), new Point(239,335), new Point(263,339), new Point(286,338), 1, MyColor.BLACK);
+        g.drawLine(225,259,221,356);
+        drawArc(g, new Point(221,356), new Point(222,358), new Point(223,360), new Point(225,356), 1, MyColor.BLACK);
+        g.drawLine(225,259,228,260);
+        g.drawLine(225,343,225,418);
+        g.drawLine(222,418,259,418);
+        g.drawLine(259,418,259,431);
+        g.drawLine(259,431,222,431);
+        g.drawLine(222,431,222,418);
+        g.drawLine(310,387,310,418);
+        g.drawLine(310,418,314,418);
+        g.drawLine(314,418,314,431);
+        g.drawLine(314,431,262,431);
+        g.drawLine(262,431,262,418);
+        g.drawLine(262,418,314,418);
+        g.drawLine(259,420,262,420);
+        g.drawLine(259,430,262,430);
+        g.drawLine(262,418,262,411);
+        g.drawLine(262,411,262,404);
+        g.drawLine(262,404,258,389);
+        drawArc(g, new Point(258,389), new Point(254,386), new Point(246,379), new Point(243,376), 1, MyColor.BLACK);
+        g.drawLine(243,376,263,377);
+        g.drawLine(263,377,263,388);
+        drawArc(g, new Point(263,388), new Point(263,390), new Point(263,396), new Point(266,401), 1, MyColor.BLACK);
+        g.drawLine(266,401,266,418);
+        g.drawLine(239,432,239,495);
+        drawArc(g, new Point(239,495), new Point(237,497), new Point(235,502), new Point(235,504), 1, MyColor.BLACK);
+        g.drawLine(235,504,235,511);
+        g.drawLine(235,511,257,511);
+        drawArc(g, new Point(257,511), new Point(258,509), new Point(257,502), new Point(251,499), 1, MyColor.BLACK);
+        drawArc(g, new Point(251,499), new Point(251,488), new Point(251,460), new Point(254,432), 1, MyColor.BLACK);
+        g.drawLine(229,511,266,511);
+        g.drawLine(229,519,266,519);
+        drawArc(g, new Point(229,511), new Point(228,512), new Point(226,514), new Point(229,519), 1, MyColor.BLACK);
+        drawArc(g, new Point(266,511), new Point(269,514), new Point(267,517), new Point(266,519), 1, MyColor.BLACK);
+        drawArc(g, new Point(266,511), new Point(264,509), new Point(260,505), new Point(256,504), 1, MyColor.BLACK);
+        g.drawLine(283,431,284,508);
+        g.drawLine(284,508,307,508);
+        drawArc(g, new Point(307,508), new Point(308,507), new Point(310,505), new Point(307,502), 1, MyColor.BLACK);
+        drawArc(g, new Point(307,502), new Point(303,498), new Point(296,496), new Point(295,490), 1, MyColor.BLACK);
+        g.drawLine(295,490,296,431);
+        g.drawLine(278,508,330,508);
+        g.drawLine(279,518,330,518);
+        drawArc(g, new Point(278,508), new Point(278,510), new Point(275,514), new Point(279,518), 1, MyColor.BLACK);
+        drawArc(g, new Point(330,518), new Point(332,514), new Point(331,510), new Point(330,508), 1, MyColor.BLACK);
+        drawArc(g, new Point(330,508), new Point(326,506), new Point(316,501), new Point(307,502), 1, MyColor.BLACK);
+        drawArc(g, new Point(330,508), new Point(375,496), new Point(654,487), new Point(330,518), 1, MyColor.BLACK);
+        drawArc(g, new Point(264,509), new Point(266,509), new Point(272,508), new Point(278,509), 1, MyColor.BLACK);
+        drawArc(g, new Point(264,519), new Point(267,520), new Point(274,520), new Point(279,519), 1, MyColor.BLACK);
+        drawArc(g, new Point(227,512), new Point(216,512), new Point(201,520), new Point(228,520), 1, MyColor.BLACK);
+        g.setColor(MyColor.SKIN_LUFFY_CHILD_SHADOW);
+        g.drawLine(239,449,253,449);
+        g.drawLine(283,450,296,450);
+        drawArc(g, new Point(241,230), new Point(252,242), new Point(285,239), new Point(299,235), 1, MyColor.BLACK);
+
+
+        buffer = floodFill(buffer, new Point(265,186), MyColor.PLACEHOLDER, MyColor.HAIR_LUFFY);
+
+        buffer = floodFill(buffer, new Point(244,440), MyColor.PLACEHOLDER, MyColor.SKIN_LUFFY_CHILD_SHADOW);
+        buffer = floodFill(buffer, new Point(290,440), MyColor.PLACEHOLDER, MyColor.SKIN_LUFFY_CHILD_SHADOW);
+
+        buffer = floodFill(buffer, new Point(314,211), MyColor.PLACEHOLDER, MyColor.SKIN_LUFFY_CHILD);
+        buffer = floodFill(buffer, new Point(311,190), MyColor.PLACEHOLDER, MyColor.SKIN_LUFFY_CHILD);
+        buffer = floodFill(buffer, new Point(295,299), MyColor.PLACEHOLDER, MyColor.SKIN_LUFFY_CHILD);
+        buffer = floodFill(buffer, new Point(224,307), MyColor.PLACEHOLDER, MyColor.SKIN_LUFFY_CHILD);
+        buffer = floodFill(buffer, new Point(245,503), MyColor.PLACEHOLDER, MyColor.SKIN_LUFFY_CHILD);
+        buffer = floodFill(buffer, new Point(292,502), MyColor.PLACEHOLDER, MyColor.SKIN_LUFFY_CHILD);
+
+        buffer = floodFill(buffer, new Point(266,237), MyColor.PLACEHOLDER, MyColor.BLUE_COLOR);
+        buffer = floodFill(buffer, new Point(294,280), MyColor.PLACEHOLDER, MyColor.BLUE_COLOR);
+
+        buffer = floodFill(buffer, new Point(247,282), MyColor.PLACEHOLDER, MyColor.SHIRT_LUFFY_CHILD);
+
+        buffer = floodFill(buffer, new Point(259,363), MyColor.PLACEHOLDER, MyColor.TROUSERS_LUFFY);
+
+        buffer = floodFill(buffer, new Point(256,383), MyColor.PLACEHOLDER, MyColor.TROUSERS_LUFFY_SHADOW);
+
+        buffer = floodFill(buffer, new Point(244,427), MyColor.PLACEHOLDER, MyColor.PANTSEDGE_LUFFY);
+        buffer = floodFill(buffer, new Point(261,427), MyColor.PLACEHOLDER, MyColor.PANTSEDGE_LUFFY);
+        buffer = floodFill(buffer, new Point(272,426), MyColor.PLACEHOLDER, MyColor.PANTSEDGE_LUFFY);
+
+        buffer = floodFill(buffer, new Point(254,516), MyColor.PLACEHOLDER, MyColor.SHOE);
+        buffer = floodFill(buffer, new Point(292,516), MyColor.PLACEHOLDER, MyColor.SHOE);
+
+        buffer = floodFill(buffer, new Point(260,508), MyColor.PLACEHOLDER, MyColor.SHOEEDGE);
+        buffer = floodFill(buffer, new Point(313,507), MyColor.PLACEHOLDER, MyColor.SHOEEDGE);
+
+        buffer = floodFill(buffer, new Point(221,518), MyColor.PLACEHOLDER, MyColor.SHIRT_LUFFY_CHILD);
+        buffer = floodFill(buffer, new Point(271,517), MyColor.PLACEHOLDER, MyColor.SHIRT_LUFFY_CHILD);
+        buffer = floodFill(buffer, new Point(346,513), MyColor.PLACEHOLDER, MyColor.SHIRT_LUFFY_CHILD);
 
         buffer = toTransparent(buffer);
 
