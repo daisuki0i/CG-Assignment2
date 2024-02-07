@@ -3,20 +3,25 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.geom.AffineTransform;
 import java.awt.image.*;
+import java.io.File;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
 public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
     private boolean doDrawTitle = true;
     private boolean doDrawTitleHat = false;
     private boolean doDrawRogerFull = false;
+    private boolean doDrawFrames = false;
 
     private float titleOpacity = 0;
     private double titleHatScale = 0;
     private float titleHatOpacity = 1;
     private double rogerFullX = -720;
+    private double currentFrame = 30;
 
     private double animatedTime = 0;
 
@@ -77,8 +82,19 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
 
             if (animatedTime >= 1) {
                 doDrawRogerFull = true;
+                doDrawFrames = true;
                 rogerFullX += 400 * (elapsedTime / 1000);
+                if (rogerFullX > -90) {
+                    // doDrawRogerFull = false;
+                    doDrawFrames = true;
+                    rogerFullX = -90;
+                }
             }
+
+            // if (currentFrame <= 382 && doDrawFrames) {
+            //     // 30 frames per second
+            //     currentFrame += 30 * elapsedTime / 1000;
+            // }
 
             repaint();
 
@@ -103,6 +119,17 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         // mainBuffer = drawRogerFaceFront();
         // mainBuffer = drawRogerFaceSide1();
         mainBuffer = drawLogoOnePiece();
+        
+        if (doDrawFrames) {
+            BufferedImage img = null;
+            try {
+                img = ImageIO.read(new File("frames/" + (int)currentFrame + ".jpg"));
+            } catch (IOException e) {
+               e.printStackTrace();
+            }
+            g2d.drawImage(img, 0, 0, 600, 600, null);
+        }
+
         if (doDrawTitle) {
             BufferedImage title = drawTitle(titleOpacity);
             g2d.drawImage(title, 0, 0, null);
@@ -127,7 +154,7 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
             BufferedImage strawHatStyle1 = drawStrawHatStyle1();
             rogerFull1.getGraphics().drawImage(rogerFaceFront, 100, 80, null);
             rogerFull1.getGraphics().drawImage(strawHatStyle1, -10, -190, 750, 750, null);
-            g2d.drawImage(rogerFull1, (int) rogerFullX, 0, null);
+            g2d.drawImage(rogerFull1, (int) rogerFullX, -200, (int)(1200 * 1.5), (int)(601 * 1.5), null);
         }
 
         g.drawImage(mainBuffer, 0, 0, null);
