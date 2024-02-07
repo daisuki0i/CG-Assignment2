@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.geom.AffineTransform;
 import java.awt.image.*;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -8,6 +9,17 @@ import java.util.Queue;
 import javax.swing.*;
 
 public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
+    private boolean doDrawTitle = true;
+    private boolean doDrawTitleHat = false;
+    private boolean doDrawRogerFull = false;
+
+    private float titleOpacity = 0;
+    private double titleHatScale = 0;
+    private float titleHatOpacity = 1;
+    private double rogerFullX = -720;
+
+    private double animatedTime = 0;
+
     public static void main(String[] args) {
         Assignment2_65050581_65050777 m = new Assignment2_65050581_65050777();
         m.addMouseListener(new MouseAdapter() {
@@ -37,6 +49,37 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
             elapsedTime = currentTime - lastTime;
             lastTime = currentTime;
 
+            // increase text opacity to 1 in 3 seconds
+            if (titleOpacity < 1) {
+                titleOpacity += (elapsedTime / 4000);
+                if (titleOpacity > 1) {
+                    titleOpacity = 1;
+                }
+            }
+            if (titleOpacity == 1) {
+                doDrawTitleHat = true;
+                titleHatScale += (elapsedTime / 500);
+                if (titleHatScale > 4) {
+                    doDrawTitle = false;
+                    titleHatOpacity -= (elapsedTime / 500);
+                    if (titleHatOpacity < 0) {
+                        doDrawTitleHat = false;
+                        titleHatOpacity = 0;
+                    }
+                }
+            }
+
+            // if the intro is ended, start the main animation
+            if (!doDrawTitle && !doDrawTitleHat) {
+                animatedTime += elapsedTime / 1000.0;
+                // System.out.println(Math.floor(animatedTime));
+            }
+
+            if (animatedTime >= 1) {
+                doDrawRogerFull = true;
+                rogerFullX += 400 * (elapsedTime / 1000);
+            }
+
             repaint();
 
         }
@@ -47,8 +90,8 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
 
         BufferedImage mainBuffer = new BufferedImage(601, 601, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g2d = mainBuffer.createGraphics();
-
         g2d.setColor(Color.BLACK);
+        g2d.fillRect(0, 0, 601, 601);
         // mainBuffer = drawStrawHatStyle1();
         // mainBuffer = drawStrawHatStyle2();
         // mainBuffer = drawStrawHatStyle3();
@@ -56,10 +99,59 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         // mainBuffer = drawStrawHatStyle5();
         // mainBuffer = drawLuffyBoy();
         // mainBuffer = drawLuffyChild();
-        mainBuffer = drawLuffyChildStandWithBack();
+        // mainBuffer = drawLuffyChildStandWithBack();
         // mainBuffer = drawRogerFaceFront();
+        // mainBuffer = drawRogerFaceSide1();
+        if (doDrawTitle) {
+            BufferedImage title = drawTitle(titleOpacity);
+            g2d.drawImage(title, 0, 0, null);
+        }
+
+        if (doDrawTitleHat) {
+            BufferedImage titleHat = drawStrawHatStyle1();
+
+            AffineTransform saveTransform = g2d.getTransform();
+            g2d.translate(320, 300);
+            g2d.scale(titleHatScale, titleHatScale);
+            g2d.translate(-320, -300);
+            g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, titleHatOpacity));
+            g2d.drawImage(titleHat, 0, 0, null);
+            g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1));
+            g2d.setTransform(saveTransform);
+        }
+
+        if (doDrawRogerFull) {
+            BufferedImage rogerFull1 = new BufferedImage(1200, 601, BufferedImage.TYPE_INT_ARGB);
+            BufferedImage rogerFaceFront = drawRogerFaceFront();
+            BufferedImage strawHatStyle1 = drawStrawHatStyle1();
+            rogerFull1.getGraphics().drawImage(rogerFaceFront, 100, 80, null);
+            rogerFull1.getGraphics().drawImage(strawHatStyle1, -10, -190, 750, 750, null);
+            g2d.drawImage(rogerFull1, (int) rogerFullX, 0, null);
+        }
 
         g.drawImage(mainBuffer, 0, 0, null);
+        
+    }
+
+    private BufferedImage drawTitle(float opacity) {
+        BufferedImage buffer = new BufferedImage(601, 601, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g = buffer.createGraphics();
+        g.setColor(Color.WHITE);
+        g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, opacity));
+
+        g.setFont(new Font("TimesRoman", Font.BOLD, 32)); 
+        drawStringCenteredScreen(g, "From Babies to the New Era", -25);
+        g.setFont(new Font("TimesRoman", Font.PLAIN, 24)); 
+        drawStringCenteredScreen(g, "- Computer Graphics Assignment 2 -", 25);
+
+        return buffer;
+    }
+
+    private void drawStringCenteredScreen(Graphics g, String s, int yAdjust) {
+        FontMetrics fm = g.getFontMetrics();
+        int x = (600 - fm.stringWidth(s)) / 2;
+        int y = (600 - fm.getHeight()) / 2 + fm.getAscent();
+        g.drawString(s, x, y + yAdjust);
     }
 
     private void plot(Graphics g, int x, int y) {
@@ -646,7 +738,28 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         buffer = floodFill(buffer, new Point(458, 465), MyColor.PLACEHOLDER, MyColor.EERIE_BLACK);
         buffer = floodFill(buffer, new Point(460, 467), MyColor.PLACEHOLDER, MyColor.EERIE_BLACK);
 
+        buffer = floodFill(buffer, new Point(312, 385), MyColor.PLACEHOLDER, Color.WHITE);
+
         buffer = toTransparent(buffer);
+
+        return buffer;
+    }
+
+    private BufferedImage drawRogerFaceSide1() {
+        BufferedImage buffer = new BufferedImage(601, 601, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g = buffer.createGraphics();
+        g.setColor(MyColor.PLACEHOLDER);
+        g.fillRect(0, 0, 601, 601);
+
+        // Face
+        drawArc(g, new Point(600, 514), new Point(598, 553), new Point(583, 552), new Point(515, 548), 1, MyColor.BLACK);
+        drawArc(g, new Point(515, 548), new Point(479, 546), new Point(398, 504), new Point(390, 502), 1, MyColor.BLACK);
+        drawArc(g, new Point(390, 502), new Point(360, 491), new Point(335, 496), new Point(306, 405), 1, MyColor.BLACK);
+        drawArc(g, new Point(306, 405), new Point(295, 430), new Point(267, 413), new Point(255, 401), 1, MyColor.BLACK);
+        drawArc(g, new Point(255, 401), new Point(237, 384), new Point(195, 371), new Point(184, 336), 1, MyColor.BLACK);
+        drawArc(g, new Point(184, 336), new Point(160, 225), new Point(235, 173), new Point(302, 390), 1, MyColor.BLACK);
+        drawArc(g, new Point(302, 390), new Point(290, 333), new Point(273, 228), new Point(295, 218), 1, MyColor.BLACK);
+        drawArc(g, new Point(295, 218), new Point(361, 117), new Point(480, 96), new Point(600, 185), 1, MyColor.BLACK);
 
         return buffer;
     }
