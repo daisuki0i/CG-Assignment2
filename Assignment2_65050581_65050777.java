@@ -20,7 +20,7 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
     private float titleOpacity = 0;
     private double titleHatScale = 0;
     private float titleHatOpacity = 1;
-    private double rogerFullX = -720;
+    private double rogerFullX = -1200;
     private double currentFrame = 30;
 
     private double animatedTime = 0;
@@ -82,19 +82,18 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
 
             if (animatedTime >= 1) {
                 doDrawRogerFull = true;
-                doDrawFrames = true;
-                rogerFullX += 400 * (elapsedTime / 1000);
-                if (rogerFullX > -90) {
-                    // doDrawRogerFull = false;
+                rogerFullX += 600 * (elapsedTime / 1000);
+                if (rogerFullX > -310) {
+                    doDrawRogerFull = false;
                     doDrawFrames = true;
-                    rogerFullX = -90;
+                    // rogerFullX = -310;
                 }
             }
 
-            // if (currentFrame <= 382 && doDrawFrames) {
-            //     // 30 frames per second
-            //     currentFrame += 30 * elapsedTime / 1000;
-            // }
+            if (currentFrame <= 382 && doDrawFrames) {
+                // 30 frames per second
+                currentFrame += 30 * elapsedTime / 1000;
+            }
 
             repaint();
 
@@ -108,16 +107,6 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         Graphics2D g2d = mainBuffer.createGraphics();
         g2d.setColor(Color.BLACK);
         g2d.fillRect(0, 0, 601, 601);
-        // mainBuffer = drawStrawHatStyle1();
-        // mainBuffer = drawStrawHatStyle2();
-        // mainBuffer = drawStrawHatStyle3();
-        // mainBuffer = drawStrawHatStyle4();
-        // mainBuffer = drawStrawHatStyle5();
-        // mainBuffer = drawLuffyBoy();
-        // mainBuffer = drawLuffyChild();
-        // mainBuffer = drawLuffyChildStandWithBack();
-        // mainBuffer = drawRogerFaceFront();
-        // mainBuffer = drawRogerFaceSide1();
         
         if (doDrawFrames) {
             BufferedImage img = null;
@@ -135,12 +124,12 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         }
 
         if (doDrawTitleHat) {
-            BufferedImage titleHat = drawStrawHatStyle1();
+            BufferedImage titleHat = drawStrawHatStyle2();
 
             AffineTransform saveTransform = g2d.getTransform();
-            g2d.translate(320, 300);
+            g2d.translate(320, 400);
             g2d.scale(titleHatScale, titleHatScale);
-            g2d.translate(-320, -300);
+            g2d.translate(-320, -400);
             g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, titleHatOpacity));
             g2d.drawImage(titleHat, 0, 0, null);
             g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1));
@@ -153,7 +142,7 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
             BufferedImage strawHatStyle1 = drawStrawHatStyle1();
             rogerFull1.getGraphics().drawImage(rogerFaceFront, 100, 80, null);
             rogerFull1.getGraphics().drawImage(strawHatStyle1, -10, -190, 750, 750, null);
-            g2d.drawImage(rogerFull1, (int) rogerFullX, -200, (int)(1200 * 1.5), (int)(601 * 1.5), null);
+            g2d.drawImage(rogerFull1, (int) rogerFullX, -310, (int)(1200 * 1.6), (int)(601 * 1.6), null);
         }
 
         g.drawImage(mainBuffer, 0, 0, null);
