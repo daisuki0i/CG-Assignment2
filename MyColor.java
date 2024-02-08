@@ -35,5 +35,15 @@ public class MyColor extends Color {
 	public static final Color PANTSEDGE_LUFFY  = Color.decode("#B5D5D4");
 	public static final Color SHOE = Color.decode("#918976");
 	public static final Color SHOEEDGE = Color.decode("#29201B");
+
+	public static final Color BANANA = Color.decode("#FFCE00");
+	public static final Color SUN = Color.decode("#FF0409");
+
+	public static final Color LINE_ON_LOGO = Color.decode("#62C3F8");
+	public static final Color LETTER = Color.decode("#4489C7");
+	public static final Color UNDERSCORE_LOGO = Color.decode("#2E63A4");
+
+	public static final Color CRIMSON_RED = Color.decode("#D70000");
+	public static final Color OAKUM = Color.decode("#AF6528");
 	
 }
