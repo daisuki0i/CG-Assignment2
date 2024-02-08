@@ -20,10 +20,12 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
     private float titleOpacity = 0;
     private double titleHatScale = 0;
     private float titleHatOpacity = 1;
-    private double rogerFullX = -720;
+    private double rogerFullX = -1200;
     private double currentFrame = 30;
 
     private double animatedTime = 0;
+
+    private static Point currentPoint = new Point(0, 0);
 
     public static void main(String[] args) {
         Assignment2_65050581_65050777 m = new Assignment2_65050581_65050777();
@@ -32,6 +34,8 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
                 int x = e.getX();
                 int y = e.getY();
                 System.out.println("x: " + x + " y: " + y);
+                currentPoint = new Point(x, y);
+                m.repaint();
             }
         });
 
@@ -82,19 +86,18 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
 
             if (animatedTime >= 1) {
                 doDrawRogerFull = true;
-                doDrawFrames = true;
-                rogerFullX += 400 * (elapsedTime / 1000);
-                if (rogerFullX > -90) {
-                    // doDrawRogerFull = false;
+                rogerFullX += 600 * (elapsedTime / 1000);
+                if (rogerFullX > -310) {
+                    doDrawRogerFull = false;
                     doDrawFrames = true;
-                    rogerFullX = -90;
+                    // rogerFullX = -310;
                 }
             }
 
-            // if (currentFrame <= 382 && doDrawFrames) {
-            //     // 30 frames per second
-            //     currentFrame += 30 * elapsedTime / 1000;
-            // }
+            if (currentFrame <= 382 && doDrawFrames) {
+                // 30 frames per second
+                currentFrame += 30 * elapsedTime / 1000;
+            }
 
             repaint();
 
@@ -136,12 +139,12 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         }
 
         if (doDrawTitleHat) {
-            BufferedImage titleHat = drawStrawHatStyle1();
+            BufferedImage titleHat = drawStrawHatStyle2();
 
             AffineTransform saveTransform = g2d.getTransform();
-            g2d.translate(320, 300);
+            g2d.translate(320, 400);
             g2d.scale(titleHatScale, titleHatScale);
-            g2d.translate(-320, -300);
+            g2d.translate(-320, -400);
             g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, titleHatOpacity));
             g2d.drawImage(titleHat, 0, 0, null);
             g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1));
@@ -154,7 +157,7 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
             BufferedImage strawHatStyle1 = drawStrawHatStyle1();
             rogerFull1.getGraphics().drawImage(rogerFaceFront, 100, 80, null);
             rogerFull1.getGraphics().drawImage(strawHatStyle1, -10, -190, 750, 750, null);
-            g2d.drawImage(rogerFull1, (int) rogerFullX, -200, (int)(1200 * 1.5), (int)(601 * 1.5), null);
+            g2d.drawImage(rogerFull1, (int) rogerFullX, -310, (int)(1200 * 1.6), (int)(601 * 1.6), null);
         }
 
         g.drawImage(mainBuffer, 0, 0, null);
@@ -2553,7 +2556,29 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         buffer = floodFill(buffer, new Point(491,378), MyColor.PLACEHOLDER, MyColor.BLACK);
         buffer = floodFill(buffer, new Point(489,379), MyColor.PLACEHOLDER, MyColor.BLACK);
         buffer = floodFill(buffer, new Point(516,356), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(409,351), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(410,350), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(407,354), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(408,352), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(411,355), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(424,359), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(425,358), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(432,361), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(439,365), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(437,366), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(455,374), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(465,375), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(464,378), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(466,374), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(476,377), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(492,377), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(494,376), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(496,375), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(502,370), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(510,363), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(512,358), MyColor.PLACEHOLDER, MyColor.BLACK);
 
+        buffer = floodFill(buffer, new Point(524,302), MyColor.PLACEHOLDER, MyColor.OAKUM);
         buffer = floodFill(buffer, new Point(538,323), MyColor.PLACEHOLDER, MyColor.OAKUM);
         buffer = floodFill(buffer, new Point(538,318), MyColor.PLACEHOLDER, MyColor.OAKUM);
         buffer = floodFill(buffer, new Point(536,314), MyColor.PLACEHOLDER, MyColor.OAKUM);
@@ -2574,12 +2599,56 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         buffer = floodFill(buffer, new Point(472,377), MyColor.PLACEHOLDER, MyColor.OAKUM);
         buffer = floodFill(buffer, new Point(460,377), MyColor.PLACEHOLDER, MyColor.OAKUM);
         buffer = floodFill(buffer, new Point(450,373), MyColor.PLACEHOLDER, MyColor.OAKUM);
+        buffer = floodFill(buffer, new Point(442,368), MyColor.PLACEHOLDER, MyColor.OAKUM);
+        buffer = floodFill(buffer, new Point(435,363), MyColor.PLACEHOLDER, MyColor.OAKUM);
+        buffer = floodFill(buffer, new Point(429,359), MyColor.PLACEHOLDER, MyColor.OAKUM);
+        buffer = floodFill(buffer, new Point(422,354), MyColor.PLACEHOLDER, MyColor.OAKUM);
+        buffer = floodFill(buffer, new Point(414,354), MyColor.PLACEHOLDER, MyColor.OAKUM);
+        buffer = floodFill(buffer, new Point(375,369), MyColor.PLACEHOLDER, MyColor.OAKUM);
+        buffer = floodFill(buffer, new Point(366,370), MyColor.PLACEHOLDER, MyColor.OAKUM);
+        buffer = floodFill(buffer, new Point(359,368), MyColor.PLACEHOLDER, MyColor.OAKUM);
+        buffer = floodFill(buffer, new Point(355,365), MyColor.PLACEHOLDER, MyColor.OAKUM);
+        buffer = floodFill(buffer, new Point(349,362), MyColor.PLACEHOLDER, MyColor.OAKUM);
+        buffer = floodFill(buffer, new Point(343,358), MyColor.PLACEHOLDER, MyColor.OAKUM);
+        buffer = floodFill(buffer, new Point(338,354), MyColor.PLACEHOLDER, MyColor.OAKUM);
+        buffer = floodFill(buffer, new Point(331,352), MyColor.PLACEHOLDER, MyColor.OAKUM);
+        buffer = floodFill(buffer, new Point(291,369), MyColor.PLACEHOLDER, MyColor.OAKUM);
+        buffer = floodFill(buffer, new Point(280,367), MyColor.PLACEHOLDER, MyColor.OAKUM);
+        buffer = floodFill(buffer, new Point(274,366), MyColor.PLACEHOLDER, MyColor.OAKUM);
+        buffer = floodFill(buffer, new Point(267,362), MyColor.PLACEHOLDER, MyColor.OAKUM);
+        buffer = floodFill(buffer, new Point(261,356), MyColor.PLACEHOLDER, MyColor.OAKUM);
+        buffer = floodFill(buffer, new Point(254,354), MyColor.PLACEHOLDER, MyColor.OAKUM);
+        buffer = floodFill(buffer, new Point(246,352), MyColor.PLACEHOLDER, MyColor.OAKUM);
+        buffer = floodFill(buffer, new Point(248,353), MyColor.PLACEHOLDER, MyColor.OAKUM);
+        buffer = floodFill(buffer, new Point(374,368), MyColor.PLACEHOLDER, MyColor.OAKUM);
+
+        // Moddaeng
+        buffer = floodFill(buffer, new Point(89, 365), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(96, 358), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(102, 353), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(108, 350), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(114, 345), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(126, 337), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(130, 350), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(133, 337), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(125, 344), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(124, 347), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(140, 336), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(134, 340), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(142, 349), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(138, 343), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(141, 342), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(144, 334), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(147, 337), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(114, 335), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(119, 336), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(120, 342), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(118, 339), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(119, 349), MyColor.PLACEHOLDER, MyColor.BLACK);
+        buffer = floodFill(buffer, new Point(113, 340), MyColor.PLACEHOLDER, MyColor.BLACK);
 
         g.setColor(Color.RED);
-        plot(g, 481,376, 1);
-        plot(g, 472,377, 1);
-        plot(g, 460,377, 1);
-        plot(g, 450,373, 1);
+        plot(g, currentPoint.x, currentPoint.y, 1);
 
         buffer = toTransparent(buffer);
 
