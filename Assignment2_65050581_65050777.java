@@ -11,6 +11,53 @@ import java.util.Queue;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
+class MyColor extends Color {
+
+	public MyColor(int r, int g, int b) {
+		super(r, g, b);
+	}
+
+	public static final Color PLACEHOLDER = Color.decode("#f5f5f5");
+	public static final Color OIL = Color.decode("#291C16");
+	public static final Color TACAO = Color.decode("#ECBA88");
+	public static final Color EERIE_BLACK = Color.decode("#1B191A");
+	public static final Color DARK_TACAO = Color.decode("#C2855D");
+	public static final Color EERIE = Color.decode("#252525");
+	public static final Color STRAW_HAT = Color.decode("#F2B862");
+	public static final Color STRAW_HAT_SHADOW = Color.decode("#7C4E1B");
+	public static final Color HEADDAND = Color.decode("#DC002E");
+	public static final Color HEADDAND_SHADOW = Color.decode("#8C0324");
+	public static final Color HAIR_LUFFY = Color.decode("#1E1E1E");
+	public static final Color SKIN_LUFFY_COLOR = Color.decode("#F1C6A3");
+	public static final Color SKIN_LUFFY_SHADOW = Color.decode("#CC9167");
+	public static final Color SHIRT_LUFFY = Color.decode("#9D2024");
+	public static final Color SHIRT_LUFFY_SHADOW = Color.decode("#621D16");
+	public static final Color SHIRT_LUFFY_CHILD = Color.decode("#ECE7E1");
+	public static final Color SHIRT_LUFFY_CHILD_SHADOW = Color.decode("#A1A2A6");
+	public static final Color BLUE_COLOR = Color.decode("#21386C");
+	public static final Color BLUE_SHADOW = Color.decode("#242128");
+	public static final Color RED_COLOR = Color.decode("#A93D3B");
+	public static final Color RED_SHADOW = Color.decode("#6B1C21");
+	public static final Color SKIN_LUFFY_CHILD = Color.decode("#EFC8A1");
+	public static final Color SKIN_LUFFY_CHILD_SHADOW = Color.decode("#BA7F5E");
+	
+	public static final Color TROUSERS_LUFFY = Color.decode("#2B5F91");
+	public static final Color TROUSERS_LUFFY_SHADOW = Color.decode("#1A4361");
+	public static final Color PANTSEDGE_LUFFY  = Color.decode("#B5D5D4");
+	public static final Color SHOE = Color.decode("#918976");
+	public static final Color SHOEEDGE = Color.decode("#29201B");
+
+	public static final Color BANANA = Color.decode("#FFCE00");
+	public static final Color SUN = Color.decode("#FF0409");
+
+	public static final Color LINE_ON_LOGO = Color.decode("#62C3F8");
+	public static final Color LETTER = Color.decode("#4489C7");
+	public static final Color UNDERSCORE_LOGO = Color.decode("#2E63A4");
+
+	public static final Color CRIMSON_RED = Color.decode("#D70000");
+	public static final Color OAKUM = Color.decode("#AF6528");
+}
+
 public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
     private boolean doDrawTitle = true;
     private boolean doDrawTitleHat = false;
@@ -29,6 +76,13 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
     private double animatedTime = 0;
 
     private static Point currentPoint = new Point(-1, -1);
+
+    private String[] lyrics = {
+        "前進あるのみ　それが誓い",
+        "夢が始まった　あの日から",
+        "目指す未来は　同じ~",
+    };
+    private String currentLyric = "";
 
     public static void main(String[] args) {
         Assignment2_65050581_65050777 m = new Assignment2_65050581_65050777();
@@ -113,6 +167,17 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
                 }
             }
 
+            // update the lyrics
+            if (currentFrame > 47 && currentFrame <= 132) {
+                currentLyric = lyrics[0];
+            } else if (currentFrame > 132 && currentFrame <= 244) {
+                currentLyric = lyrics[1];
+            } else if (currentFrame > 256 && currentFrame <= 382) {
+                currentLyric = lyrics[2];
+            } else {
+                currentLyric = "";
+            }
+
             repaint();
 
         }
@@ -180,6 +245,10 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
             g2d.setTransform(saveTransform);
         }
 
+        // draw the lyrics
+        g2d.setFont(new Font(Font.SERIF, Font.ITALIC | Font.BOLD, 24));
+        drawStringCenteredScreen(g2d, currentLyric, 225);
+
         g.drawImage(mainBuffer, 0, 0, null);
 
         // debug
@@ -190,7 +259,6 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
     private BufferedImage drawTitle(float opacity) {
         BufferedImage buffer = new BufferedImage(601, 601, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g = buffer.createGraphics();
-        g.setColor(Color.WHITE);
         g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, opacity));
 
         g.setFont(new Font("TimesRoman", Font.BOLD, 32));
@@ -205,6 +273,16 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         FontMetrics fm = g.getFontMetrics();
         int x = (600 - fm.stringWidth(s)) / 2;
         int y = (600 - fm.getHeight()) / 2 + fm.getAscent();
+
+        // draw outline
+        g.setColor(Color.BLACK);
+        g.drawString(s, x - 1, y + yAdjust - 1);
+        g.drawString(s, x + 1, y + yAdjust + 1);
+        g.drawString(s, x - 1, y + yAdjust + 1);
+        g.drawString(s, x + 1, y + yAdjust - 1);
+
+        // draw text
+        g.setColor(Color.WHITE);
         g.drawString(s, x, y + yAdjust);
     }
 
@@ -1042,33 +1120,6 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         buffer = floodFill(buffer, new Point(312, 385), MyColor.PLACEHOLDER, Color.WHITE);
 
         buffer = toTransparent(buffer);
-
-        return buffer;
-    }
-
-    private BufferedImage drawRogerFaceSide1() {
-        BufferedImage buffer = new BufferedImage(601, 601, BufferedImage.TYPE_INT_ARGB);
-        Graphics2D g = buffer.createGraphics();
-        g.setColor(MyColor.PLACEHOLDER);
-        g.fillRect(0, 0, 601, 601);
-
-        // Face
-        drawArc(g, new Point(600, 514), new Point(598, 553), new Point(583, 552), new Point(515, 548), 1,
-            MyColor.BLACK);
-        drawArc(g, new Point(515, 548), new Point(479, 546), new Point(398, 504), new Point(390, 502), 1,
-            MyColor.BLACK);
-        drawArc(g, new Point(390, 502), new Point(360, 491), new Point(335, 496), new Point(306, 405), 1,
-            MyColor.BLACK);
-        drawArc(g, new Point(306, 405), new Point(295, 430), new Point(267, 413), new Point(255, 401), 1,
-            MyColor.BLACK);
-        drawArc(g, new Point(255, 401), new Point(237, 384), new Point(195, 371), new Point(184, 336), 1,
-            MyColor.BLACK);
-        drawArc(g, new Point(184, 336), new Point(160, 225), new Point(235, 173), new Point(302, 390), 1,
-            MyColor.BLACK);
-        drawArc(g, new Point(302, 390), new Point(290, 333), new Point(273, 228), new Point(295, 218), 1,
-            MyColor.BLACK);
-        drawArc(g, new Point(295, 218), new Point(361, 117), new Point(480, 96), new Point(600, 185), 1,
-            MyColor.BLACK);
 
         return buffer;
     }
@@ -3141,6 +3192,7 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         int height = image.getHeight();
         BufferedImage newImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
 
+        // Iterate through the image, setting the alpha of all placeholder color pixels to 0
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
                 int pixelColor = image.getRGB(x, y);
@@ -3149,7 +3201,7 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
                 int green = (pixelColor >> 8) & 0xff;
                 int blue = pixelColor & 0xff;
 
-                // If the pixel is white, set its alpha to 0 (transparent)
+                // If the pixel is placeholder color, set its alpha to 0 (transparent)
                 if (red == 245 && green == 245 && blue == 245) {
                     alpha = 0;
                 }

@@ -45,5 +45,4 @@ public class MyColor extends Color {
 
 	public static final Color CRIMSON_RED = Color.decode("#D70000");
 	public static final Color OAKUM = Color.decode("#AF6528");
-	
 }
