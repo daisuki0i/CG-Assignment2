@@ -16,16 +16,19 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
     private boolean doDrawTitleHat = false;
     private boolean doDrawRogerFull = false;
     private boolean doDrawFrames = false;
+    private boolean doDrawLogoOnepiece = false;
 
     private float titleOpacity = 0;
     private double titleHatScale = 0;
     private float titleHatOpacity = 1;
     private double rogerFullX = -1200;
+    private double logoOnepieceScale = 0;
+    private double logoOnepieceRotation = 0;
     private double currentFrame = 30;
 
     private double animatedTime = 0;
 
-    private static Point currentPoint = new Point(0, 0);
+    private static Point currentPoint = new Point(-1, -1);
 
     public static void main(String[] args) {
         Assignment2_65050581_65050777 m = new Assignment2_65050581_65050777();
@@ -33,7 +36,7 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
             public void mousePressed(MouseEvent e) {
                 int x = e.getX();
                 int y = e.getY();
-                System.out.printf("buffer = floodFill(buffer, new Point(%d, %d), MyColor.PLACEHOLDER, MyColor.BLACK);%n", x, y);
+                System.out.printf("buffer = floodFill(buffer, new Point(%d, %d), MyColor.PLACEHOLDER, MyColor.WHITE);%n", x, y);
                 currentPoint = new Point(x, y);
                 m.repaint();
             }
@@ -81,22 +84,33 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
             // if the intro is ended, start the main animation
             if (!doDrawTitle && !doDrawTitleHat) {
                 animatedTime += elapsedTime / 1000.0;
-                // System.out.println(Math.floor(animatedTime));
             }
 
+            // move the full roger to the right
             if (animatedTime >= 1) {
                 doDrawRogerFull = true;
                 rogerFullX += 600 * (elapsedTime / 1000);
                 if (rogerFullX > -310) {
                     doDrawRogerFull = false;
                     doDrawFrames = true;
-                    // rogerFullX = -310;
                 }
             }
 
             if (currentFrame <= 382 && doDrawFrames) {
                 // 30 frames per second
                 currentFrame += 30 * elapsedTime / 1000;
+            }
+
+            // draw the logo onepiece in the end
+            if (currentFrame > 382) {
+                doDrawLogoOnepiece = true;
+                // fast rotation and scale in
+                logoOnepieceScale += (elapsedTime / 1000) * 2;
+                logoOnepieceRotation += (elapsedTime / 1000) * 1200;
+                if (logoOnepieceScale > 1) {
+                    logoOnepieceScale = 1;
+                    logoOnepieceRotation = 0;
+                }
             }
 
             repaint();
@@ -111,18 +125,8 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         Graphics2D g2d = mainBuffer.createGraphics();
         g2d.setColor(Color.BLACK);
         g2d.fillRect(0, 0, 601, 601);
-        // mainBuffer = drawStrawHatStyle1();
-        // mainBuffer = drawStrawHatStyle2();
-        // mainBuffer = drawStrawHatStyle3();
-        // mainBuffer = drawStrawHatStyle4();
-        // mainBuffer = drawStrawHatStyle5();
-        // mainBuffer = drawLuffyBoy();
-        // mainBuffer = drawLuffyChild();
-        // mainBuffer = drawLuffyChildStandWithBack();
-        // mainBuffer = drawRogerFaceFront();
-        // mainBuffer = drawRogerFaceSide1();
-        mainBuffer = drawLogoOnePiece();
 
+        // draw the frames
         if (doDrawFrames) {
             BufferedImage img = null;
             try {
@@ -133,11 +137,13 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
             g2d.drawImage(img, 0, 0, 600, 600, null);
         }
 
+        // draw the title
         if (doDrawTitle) {
             BufferedImage title = drawTitle(titleOpacity);
             g2d.drawImage(title, 0, 0, null);
         }
 
+        // draw the title hat
         if (doDrawTitleHat) {
             BufferedImage titleHat = drawStrawHatStyle2();
 
@@ -151,6 +157,7 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
             g2d.setTransform(saveTransform);
         }
 
+        // draw the full roger
         if (doDrawRogerFull) {
             BufferedImage rogerFull1 = new BufferedImage(1200, 601, BufferedImage.TYPE_INT_ARGB);
             BufferedImage rogerFaceFront = drawRogerFaceFront();
@@ -160,8 +167,24 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
             g2d.drawImage(rogerFull1, (int) rogerFullX, -310, (int)(1200 * 1.6), (int)(601 * 1.6), null);
         }
 
+        // draw the logo onepiece
+        if (doDrawLogoOnepiece) {
+            BufferedImage logoOnePiece = drawLogoOnePiece();
+
+            AffineTransform saveTransform = g2d.getTransform();
+            g2d.translate(300, 300);
+            g2d.scale(logoOnepieceScale, logoOnepieceScale);
+            g2d.rotate(Math.toRadians(logoOnepieceRotation));
+            g2d.translate(-300, -300);
+            g2d.drawImage(logoOnePiece, 0, 0, null);
+            g2d.setTransform(saveTransform);
+        }
+
         g.drawImage(mainBuffer, 0, 0, null);
 
+        // debug
+        g.setColor(Color.RED);
+        plot(g, currentPoint.x, currentPoint.y, 1);
     }
 
     private BufferedImage drawTitle(float opacity) {
@@ -3097,9 +3120,15 @@ public class Assignment2_65050581_65050777 extends JPanel implements Runnable {
         buffer = floodFill(buffer, new Point(207, 367), MyColor.PLACEHOLDER, MyColor.OAKUM);
         buffer = floodFill(buffer, new Point(148, 342), MyColor.PLACEHOLDER, MyColor.OAKUM);
         buffer = floodFill(buffer, new Point(150, 341), MyColor.PLACEHOLDER, MyColor.OAKUM);
-
-        g.setColor(Color.RED);
-        plot(g, currentPoint.x, currentPoint.y, 1);
+        buffer = floodFill(buffer, new Point(130, 346), MyColor.PLACEHOLDER, MyColor.WHITE);
+        buffer = floodFill(buffer, new Point(130, 339), MyColor.PLACEHOLDER, MyColor.WHITE);
+        buffer = floodFill(buffer, new Point(139, 346), MyColor.PLACEHOLDER, MyColor.WHITE);
+        buffer = floodFill(buffer, new Point(137, 338), MyColor.PLACEHOLDER, MyColor.WHITE);
+        buffer = floodFill(buffer, new Point(143, 337), MyColor.PLACEHOLDER, MyColor.WHITE);
+        buffer = floodFill(buffer, new Point(122, 347), MyColor.PLACEHOLDER, MyColor.WHITE);
+        buffer = floodFill(buffer, new Point(123, 339), MyColor.PLACEHOLDER, MyColor.WHITE);
+        buffer = floodFill(buffer, new Point(117, 344), MyColor.PLACEHOLDER, MyColor.WHITE);
+        buffer = floodFill(buffer, new Point(116, 338), MyColor.PLACEHOLDER, MyColor.WHITE);
 
         buffer = toTransparent(buffer);
 
